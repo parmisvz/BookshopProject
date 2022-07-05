@@ -68,6 +68,9 @@
     <Compile Include="AdminSignUp.xaml.cs">
       <DependentUpon>AdminSignUp.xaml</DependentUpon>
     </Compile>
+    <Compile Include="AdminViewUsers.xaml.cs">
+      <DependentUpon>AdminViewUsers.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Book.cs" />
     <Compile Include="MVVM\View\ProfileViewer.xaml.cs">
       <DependentUpon>ProfileViewer.xaml</DependentUpon>
@@ -109,6 +112,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="AdminSignUp.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AdminViewUsers.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

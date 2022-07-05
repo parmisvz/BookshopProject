@@ -5,8 +5,31 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AP01Project"
         mc:Ignorable="d"
-        Title="AdminAddedBooks" Height="450" Width="800">
+        Title="AdminAddedBooks" Height="450" Width="380" AllowsTransparency="True" Background="Transparent"
+        WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid>
-        
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Border CornerRadius="10" Grid.RowSpan="2">
+                <Border.Background>
+                    <LinearGradientBrush>
+                        <GradientStop Color="#7be9f6" Offset="0.0"/>
+                        <GradientStop Color="#f083da" Offset="1"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+            </Border>
+            <StackPanel>
+                <TextBlock  Text="Added Books" Foreground="White" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" 
+                       FontSize="40" Margin="10" FontFamily="Century Gothic">
+                </TextBlock>
+
+                <Image Source="Images/white-removebg-preview.png" Width="120"/>
+            </StackPanel>
+
+        </Grid>
     </Grid>
 </Window>

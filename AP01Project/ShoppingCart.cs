@@ -8,10 +8,22 @@ namespace AP01Project
 {
     public class ShoppingCart
     {
-        public List<Book> SelectedBooks =new List<Book>();
+        public static List<Book> SelectedBooks =new List<Book>();
         public int TotalPrice { get; set; }
         public int TotalDiscount { get; set; }
         public ShoppingCart()
+        {
+
+        }
+        public void DeleteBookFromList()
+        {
+
+        }
+        public void AddBookToList()
+        {
+
+        }
+        public void CountTotalPrice()
         {
 
         }

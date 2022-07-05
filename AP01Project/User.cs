@@ -94,7 +94,8 @@ namespace AP01Project
         }
         public void sqladd()
         {
-            SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Lenovo\Desktop\WpfApp1\data\user2.mdf;Integrated Security=True;Connect Timeout=30");
+            string Databasepath = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Lenovo\Desktop\WpfApp1\data\user2.mdf;Integrated Security=True;Connect Timeout=30";
+            SqlConnection conn = new SqlConnection(Databasepath);
             conn.Open();
             string command;
             command = "insert into Table values('" + user_name + "','" + password + "', '" + name + "','" + phone_number + "','" + mojodi + "')";
@@ -130,7 +131,5 @@ namespace AP01Project
             }
             else return true;
         }
-        //public void checkusers(user obj)
-
     }
 }

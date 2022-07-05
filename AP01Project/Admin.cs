@@ -13,6 +13,7 @@ namespace AP01Project
         public string password { get; set; }
         public string name { get; set; }
         public string phone_number { get; set; }
+        public int AccountBalance { get; set; }
         public Admin(string user_name, string password, string name, string phone_number)
         {
             if (!check_username(user_name))

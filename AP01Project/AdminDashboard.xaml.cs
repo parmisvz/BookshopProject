@@ -21,9 +21,23 @@ namespace AP01Project
     /// </summary>
     public partial class AdminDashboard : Window
     {
-        public AdminDashboard()
+        Admin obj;
+        public AdminDashboard(Admin _obj)
         {
+            this.obj = obj;
             InitializeComponent();
+        }
+
+        private void ShowInformation(object sender, RoutedEventArgs e)
+        {
+            obj.user_name = username.Text;
+            obj.name = name.Text;
+            obj.phone_number = phone.Text;
+        }
+
+        private void Edit(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

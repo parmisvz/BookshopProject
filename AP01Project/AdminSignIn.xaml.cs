@@ -34,11 +34,13 @@ namespace AP01Project
         {
             try
             {
-                if (Admin.checkadmin(user_name.Text, password.Password))
+                if (User.checkuser(user_name.Text, password.Password))
                 {
-                    //userdashboard userdashboard = new userdashboard(obj);
-                    //admindashboard admindashboard=new admindashboard(admin)
-                    // admindashboard.Show();
+                    string name = User.Name(user_name.Text);
+                    string phone = User.Phone_number(user_name.Text);
+                    Admin person = new Admin(user_name.Text, password.Password, name, phone);
+                    AdminDashboard userdashboard = new AdminDashboard(person);
+                    userdashboard.Show();
                     this.Close();
                 }
                 else
