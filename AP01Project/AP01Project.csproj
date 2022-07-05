@@ -80,6 +80,9 @@
     <Compile Include="UserDashboard.xaml.cs">
       <DependentUpon>UserDashboard.xaml</DependentUpon>
     </Compile>
+    <Compile Include="userprofile.xaml.cs">
+      <DependentUpon>userprofile.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserSignIn.xaml.cs">
       <DependentUpon>UserSignIn.xaml</DependentUpon>
     </Compile>
@@ -150,6 +153,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="userprofile.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UserSignIn.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -202,6 +209,9 @@
     <Resource Include="Images\phone1-removebg-preview.png" />
     <Resource Include="Images\white-removebg-preview.png" />
     <Resource Include="Images\white_name-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\bank-removebg-preview.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

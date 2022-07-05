@@ -19,9 +19,18 @@ namespace AP01Project
     /// </summary>
     public partial class UserDashboard : Window
     {
-        public UserDashboard()
+        User obj;
+        public UserDashboard(User obj)
         {
+            this.obj = obj;
             InitializeComponent();
+        }
+
+        private void open_userprofile(object sender, RoutedEventArgs e)
+        {
+            userprofile userprofile = new userprofile(obj);
+            userprofile.Show();
+            this.Close();
         }
     }
 }

@@ -10,7 +10,7 @@ namespace AP01Project
         public static List<User> Users = new List<User>();
         public static List<User> VIPUsers = new List<User>();
         public List<Book> Library = new List<Book>();
-        public List<Book> VIPBook=new List<Book>();
+        public List<Book> VIPBook = new List<Book>();
         public string user_name { get; set; }
         public string password { get; set; }
         public string name { get; set; }
@@ -21,36 +21,76 @@ namespace AP01Project
         public ShoppingCart CustomerCart { get; set; }
         public User(string user_name, string password, string name, string phone_number)
         {
-            if (!check_username(user_name))
-            {
-                throw new Exception("username is not valid");
-            }
-            else
-            {
-                this.user_name = user_name;
-                this.password = password;
-                this.name = name;
-                this.phone_number = phone_number;
-                this.mojodi = 0;
-                Users.Add(this);
-                sqladd();
-            }
+
+
+            this.user_name = user_name;
+            this.password = password;
+            this.name = name;
+            this.phone_number = phone_number;
+            this.mojodi = 0;
+            //Users.Add(this);
+            // sqladd();
+
         }
-        public bool check_username(string user_name)
+        public static void addtousers(User obj, string user_name)
         {
 
+
+
+
+            Users.Add(obj);
+
+        }
+        public static string Name(string user_name)
+        {
+            for (int i = 0; i < Users.Count; i++)
+            {
+                if (Users[i].user_name == user_name)
+                {
+                    string x = Users[i].name;
+                    return x;
+                }
+
+            }
+            return null;
+        }
+        public static string Phone_number(string user_name)
+        {
+            for (int i = 0; i < Users.Count; i++)
+            {
+                if (Users[i].user_name == user_name)
+                {
+                    string x = Users[i].phone_number;
+                    return x;
+                }
+
+            }
+            return null;
+        }
+        public static bool check_username(string user_name)
+        {
+            int j = 0;
             for (int i = 0; i < Users.Count; i++)
             {
                 if (user_name == Users[i].user_name)
                 {
-                    return false;
+                    return true;
                 }
                 else
                 {
-                    continue;
+                    j++;
                 }
             }
-            return true;
+            if (j == Users.Count)
+            {
+
+
+                return false;
+            }
+            else
+            {
+                return true;
+            }
         }
         public void sqladd()
         {
@@ -60,8 +100,8 @@ namespace AP01Project
             command = "insert into Table values('" + user_name + "','" + password + "', '" + name + "','" + phone_number + "','" + mojodi + "')";
             SqlCommand cmd = new SqlCommand(command, conn);
             cmd.BeginExecuteNonQuery();
-            // new
-            // conn.Close();
+
+            conn.Close();
         }
         public static bool checkuser(string username, string pass)
         {

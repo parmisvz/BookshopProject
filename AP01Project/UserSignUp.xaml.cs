@@ -60,6 +60,7 @@ namespace AP01Project
                 else
                 {
                     User cust = new User(username.Text, pass.Password, name.Text, phone.Text);
+                    User.addtousers(cust, username.Text);
                     UserSignIn window1 = new UserSignIn();
                     window1.Show();
                     // user.checkusers(cust);

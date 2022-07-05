@@ -8,11 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/acount1-removebg-preview.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/acount2-removebg-preview.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/password1-removebg-preview.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/phone1-removebg-preview.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/white-removebg-preview.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/white_name-removebg-preview.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/bank-removebg-preview.png")]
 
 
