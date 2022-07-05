@@ -56,6 +56,9 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Admin.cs" />
+    <Compile Include="AdminAddedBooks.xaml.cs">
+      <DependentUpon>AdminAddedBooks.xaml</DependentUpon>
+    </Compile>
     <Compile Include="AdminDashboard.xaml.cs">
       <DependentUpon>AdminDashboard.xaml</DependentUpon>
     </Compile>
@@ -83,6 +86,10 @@
     <Compile Include="UserSignUp.xaml.cs">
       <DependentUpon>UserSignUp.xaml</DependentUpon>
     </Compile>
+    <Page Include="AdminAddedBooks.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="AdminChoose.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
