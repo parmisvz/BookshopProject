@@ -13,6 +13,9 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Data;
+using System.Data.SqlClient;
+using System.IO;
 
 namespace AP01Project
 {
@@ -27,15 +30,28 @@ namespace AP01Project
             this.obj = obj;
             InitializeComponent();
         }
-
         private void ShowInformation(object sender, RoutedEventArgs e)
         {
             obj.user_name = username.Text;
             obj.name = name.Text;
             obj.phone_number = phone.Text;
         }
-
         private void Edit(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ViewUsers_Checked(object sender, RoutedEventArgs e)
+        {
+            AdminViewUsers adminViewUsers = new AdminViewUsers();
+        }
+
+        private void AddedBooks_Checked(object sender, RoutedEventArgs e)
+        {
+            AdminAddedBooks adminAddedBooks = new AdminAddedBooks();
+        }
+
+        private void AccountBalance_Checked(object sender, RoutedEventArgs e)
         {
 
         }

@@ -3,6 +3,9 @@ using System.Windows;
 using System.Windows.Input;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
+using System.Data;
+using System.Data.SqlClient;
+using System.IO;
 
 namespace AP01Project
 {
@@ -62,7 +65,17 @@ namespace AP01Project
                     User cust = new User(username.Text, pass.Password, name.Text, phone.Text);
                     User.addtousers(cust, username.Text);
                     UserSignIn window1 = new UserSignIn();
+
+                    string path = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\asus\Desktop\ProjectFile\AP01Project\data\UserInfo.mdf;Integrated Security=True;Connect Timeout=30";
+                    SqlConnection SConnection = new SqlConnection();
+                    SConnection.Open();
+                    string Command="insert into TUserInfo values('"+ username.Text + "','"+ username.Text + "','"+ name.Text + "','"+ phone.Text + "','"+0+"')";
+                    SqlCommand SCommand = new SqlCommand(Command, SConnection);
+                    SCommand.BeginExecuteNonQuery();
+                    SConnection.Close();
+
                     window1.Show();
+
                     // user.checkusers(cust);
                     this.Close();
                 }

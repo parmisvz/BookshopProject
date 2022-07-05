@@ -33,21 +33,24 @@
                        Margin="20,0,0,0" />
 
             <StackPanel Grid.Row="1">
-                <RadioButton Content="View Users"
+                <RadioButton x:Name="ViewUsers"
+                             Content="View Users"
                              Height="50"
                              Foreground="Black"
                              FontSize="22"
-                             Style="{StaticResource MenuButtonTheme}" />
-                <RadioButton Content="Added Books"
+                             Style="{StaticResource MenuButtonTheme}" Checked="ViewUsers_Checked" />
+                <RadioButton x:Name="AddedBooks"
+                             Content="Added Books"
                              Height="50"
                              Foreground="Black"
                              FontSize="22"
-                             Style="{StaticResource MenuButtonTheme}"/>
-                <RadioButton Content="Account Balance"
+                             Style="{StaticResource MenuButtonTheme}" Checked="AddedBooks_Checked"/>
+                <RadioButton x:Name="AccountBalance"
+                             Content="Account Balance"
                              Height="50"
                              Foreground="Black"
                              FontSize="22"
-                             Style="{StaticResource MenuButtonTheme}"/>
+                             Style="{StaticResource MenuButtonTheme}" Checked="AccountBalance_Checked"/>
             </StackPanel>
 
             <TextBox Width="250"
