@@ -67,7 +67,7 @@ namespace AP01Project
                     UserSignIn window1 = new UserSignIn();
 
                     string path = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\asus\Desktop\ProjectFile\AP01Project\data\UserInfo.mdf;Integrated Security=True;Connect Timeout=30";
-                    SqlConnection SConnection = new SqlConnection();
+                    SqlConnection SConnection = new SqlConnection(path);
                     SConnection.Open();
                     string Command="insert into TUserInfo values('"+ username.Text + "','"+ username.Text + "','"+ name.Text + "','"+ phone.Text + "','"+0+"')";
                     SqlCommand SCommand = new SqlCommand(Command, SConnection);

@@ -12,7 +12,7 @@
         AllowsTransparency="True"
         Height="500" Width="600">
 
-    <Border Background="AntiqueWhite"
+    <Border Background="AliceBlue"
             CornerRadius="20">
         <Grid>
             <Grid.ColumnDefinitions>
@@ -51,6 +51,18 @@
                              Foreground="Black"
                              FontSize="22"
                              Style="{StaticResource MenuButtonTheme}" Checked="AccountBalance_Checked"/>
+                <RadioButton x:Name="SearchBookForm"
+                             Content="Search Book"
+                             Height="50"
+                             Foreground="Black"
+                             FontSize="22"
+                             Style="{StaticResource MenuButtonTheme}" Checked="SearchBookForm_Checked" />
+                <RadioButton x:Name="SearchUserForm"
+                             Content="Search User"
+                             Height="50"
+                             Foreground="Black"
+                             FontSize="22"
+                             Style="{StaticResource MenuButtonTheme}" Checked="SearchUserForm_Checked" />
             </StackPanel>
 
             <TextBox Width="250"

@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\asus\Desktop\ProjectFile\AP01Project\obj\Debug\
+C:\Users\asus\Desktop\BookshopProject\AP01Project\obj\Debug\
 AP01Project
 none
 false
 DEBUG;TRACE
-C:\Users\asus\Desktop\ProjectFile\AP01Project\App.xaml
-171989646639
+C:\Users\asus\Desktop\BookshopProject\AP01Project\App.xaml
+16129078348
 
-27163825723
-13-1310406943
-AdminAddedBooks.xaml;AdminChoose.xaml;AdminDashboard.xaml;AdminSignIn.xaml;AdminSignUp.xaml;AdminViewUsers.xaml;ButtonTheme.xaml;MainWindow.xaml;MVVM\View\ProfileViewer.xaml;Theme\MenuButtonTheme.xaml;Theme\TextBoxTheme.xaml;UserChoose.xaml;UserDashboard.xaml;userprofile.xaml;UserSignIn.xaml;UserSignUp.xaml;Window1.xaml;
+27993225324
+151937372271
+AdminAddedBooks.xaml;AdminChoose.xaml;AdminDashboard.xaml;AdminSignIn.xaml;AdminSignUp.xaml;AdminViewUsers.xaml;ButtonTheme.xaml;MainWindow.xaml;MVVM\View\ProfileViewer.xaml;Theme\MenuButtonTheme.xaml;Theme\TextBoxTheme.xaml;UserChoose.xaml;UserDashboard.xaml;userprofile.xaml;UserSignIn.xaml;UserSignUp.xaml;
 
-False
+True
 

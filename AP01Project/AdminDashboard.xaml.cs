@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,7 +25,7 @@ namespace AP01Project
         Admin obj;
         public AdminDashboard(Admin _obj)
         {
-            this.obj = obj;
+            this.obj = _obj;
             InitializeComponent();
         }
         private void ShowInformation(object sender, RoutedEventArgs e)
@@ -49,9 +47,20 @@ namespace AP01Project
         private void AddedBooks_Checked(object sender, RoutedEventArgs e)
         {
             AdminAddedBooks adminAddedBooks = new AdminAddedBooks();
+            adminAddedBooks.Show();
         }
 
         private void AccountBalance_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void SearchBookForm_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void SearchUserForm_Checked(object sender, RoutedEventArgs e)
         {
 
         }

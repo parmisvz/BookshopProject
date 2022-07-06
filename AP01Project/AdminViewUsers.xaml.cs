@@ -29,7 +29,7 @@ namespace AP01Project
         private void ShowButton_Click(object sender, RoutedEventArgs e)
         {
             string path = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\asus\Desktop\ProjectFile\AP01Project\data\UserInfo.mdf;Integrated Security=True;Connect Timeout=30";
-            SqlConnection SConnection = new SqlConnection();
+            SqlConnection SConnection = new SqlConnection(path);
             SConnection.Open();
             string Command = "select * from TUserInfo";
             SqlDataAdapter adapter = new SqlDataAdapter(Command, SConnection);

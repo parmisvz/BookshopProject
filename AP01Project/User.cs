@@ -106,30 +106,49 @@ namespace AP01Project
         }
         public static bool checkuser(string username, string pass)
         {
-            int j = 0;
-            for (int i = 0; i < Users.Count; i++)
+            //int j = 0;
+            //for (int i = 0; i < Users.Count; i++)
+            //{
+            //    if (username == Users[i].user_name)
+            //    {
+            //        if (pass == Users[i].password)
+            //        {
+            //            return true;
+            //        }
+            //        else
+            //        {
+            //            return false;
+            //        }
+            //    }
+            //    else
+            //    {
+            //        j++;
+            //    }
+            //}
+            //if (j == Users.Count)
+            //{
+            //    return false;
+            //}
+            //else return true;
+            string path = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\asus\Desktop\ProjectFile\AP01Project\data\UserInfo.mdf;Integrated Security=True;Connect Timeout=30";
+            SqlConnection sqlConnection = new SqlConnection(path);
+            string Command = "select * from TUserInfo";
+            SqlDataAdapter adapter = new SqlDataAdapter(Command, sqlConnection);
+            DataTable dataT = new DataTable();
+            adapter.Fill(dataT);
+            if (dataT.Rows.Count != 0)
+                return true;
+            for (int i = 0; i < dataT.Rows.Count; i++)
             {
-                if (username == Users[i].user_name)
+                if (dataT.Rows[i][0] == username)
                 {
-                    if (pass == Users[i].password)
-                    {
+                    if (dataT.Rows[i][2] == pass)
                         return true;
-                    }
                     else
-                    {
                         return false;
-                    }
-                }
-                else
-                {
-                    j++;
                 }
             }
-            if (j == Users.Count)
-            {
-                return false;
-            }
-            else return true;
+            return false;
         }
     }
 }

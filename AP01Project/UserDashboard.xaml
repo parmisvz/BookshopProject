@@ -29,6 +29,7 @@
                        HorizontalAlignment="Left"
                        Foreground="Black"
                        FontSize="25"
+                       FontWeight="Bold"
                        Margin="20 0 0 0"/>
 
             <StackPanel Grid.Row="1">
@@ -44,6 +45,11 @@
                              Height="50"
                              Foreground="Black"
                              Style="{StaticResource MenuButtonTheme}"/>
+                <RadioButton x:Name="SearchForm"
+                             Content="Search Book"
+                             Height="50"
+                             Foreground="Black"
+                             Style="{StaticResource MenuButtonTheme}" />
             </StackPanel>
             <TextBox Width="250"
                      Height="40"

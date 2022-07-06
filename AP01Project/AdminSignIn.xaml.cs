@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Data.SqlClient;
 
 namespace AP01Project
 {
@@ -34,7 +35,7 @@ namespace AP01Project
         {
             try
             {
-                if (User.checkuser(user_name.Text, password.Password))
+                if (Admin.checkadmin(user_name.Text, password.Password))
                 {
                     string name = User.Name(user_name.Text);
                     string phone = User.Phone_number(user_name.Text);

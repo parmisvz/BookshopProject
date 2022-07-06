@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.SqlClient;
+using System.Data;
 
 namespace AP01Project
 {
@@ -14,6 +16,7 @@ namespace AP01Project
         public string name { get; set; }
         public string phone_number { get; set; }
         public int AccountBalance { get; set; }
+
         public Admin(string user_name, string password, string name, string phone_number)
         {
             if (!check_username(user_name))
@@ -46,30 +49,28 @@ namespace AP01Project
         }
         public static bool checkadmin(string username, string pass)
         {
-            int j = 0;
-            for (int i = 0; i < Admins.Count; i++)
+            string path = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\asus\Desktop\ProjectFile\AP01Project\data\AdminInfo.mdf;Integrated Security=True;Connect Timeout=30";
+            SqlConnection sqlConnection = new SqlConnection(path);
+            string Command = "select * from TAdminInfo";
+            SqlDataAdapter adapter = new SqlDataAdapter(Command, sqlConnection);
+            DataTable dataT = new DataTable();
+            adapter.Fill(dataT);
+            if (dataT.Rows.Count != 0)
+                return true;
+            for (int i = 0; i < dataT.Rows.Count; i++)
             {
-                if (username == Admins[i].user_name)
+                Console.WriteLine(dataT.Rows[i][0]);
+                Console.WriteLine(dataT.Rows[i][2]);
+                if (dataT.Rows[i][0]== username)
                 {
-                    if (pass == Admins[i].password)
-                    {
+                    if (dataT.Rows[i][2]== pass)
                         return true;
-                    }
                     else
-                    {
                         return false;
-                    }
-                }
-                else
-                {
-                    j++;
                 }
             }
-            if (j == Admins.Count)
-            {
-                return false;
-            }
-            else return true;
+            return false;
+            
         }
     }
 }
