@@ -7,7 +7,7 @@ namespace AP01Project
 {
     public class Admin
     {
-        public static List<Admin> Admins { set; get; } = ReadFromSQLAddToList();
+        public static List<Admin> Admins { set; get; } 
         public string user_name { get; set; }
         public string password { get; set; }
         public string name { get; set; }
@@ -47,6 +47,7 @@ namespace AP01Project
         }
         public static bool checkadmin(string username, string pass)
         {
+            Admins=ReadFromSQLAddToList();
             bool accept = false;
             for (int i = 0; i < Admins.Count; i++)
                 if (Admins[i].user_name == username)
