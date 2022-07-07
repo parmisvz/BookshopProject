@@ -73,12 +73,18 @@
     <Compile Include="AdminSignUp.xaml.cs">
       <DependentUpon>AdminSignUp.xaml</DependentUpon>
     </Compile>
+    <Compile Include="AdminUserSearch.xaml.cs">
+      <DependentUpon>AdminUserSearch.xaml</DependentUpon>
+    </Compile>
     <Compile Include="AdminViewUsers.xaml.cs">
       <DependentUpon>AdminViewUsers.xaml</DependentUpon>
     </Compile>
     <Compile Include="Book.cs" />
     <Compile Include="bookslist.xaml.cs">
       <DependentUpon>bookslist.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BuyBook.xaml.cs">
+      <DependentUpon>BuyBook.xaml</DependentUpon>
     </Compile>
     <Compile Include="cart.xaml.cs">
       <DependentUpon>cart.xaml</DependentUpon>
@@ -130,6 +136,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="AdminUserSearch.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="AdminViewUsers.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -139,6 +149,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ButtonTheme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BuyBook.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

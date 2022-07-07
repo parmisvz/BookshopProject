@@ -231,3 +231,5 @@ C:\Users\asus\Desktop\BookshopProject\AP01Project\obj\Debug\bookslist.g.cs
 C:\Users\asus\Desktop\BookshopProject\AP01Project\obj\Debug\cart.g.cs
 C:\Users\asus\Desktop\BookshopProject\AP01Project\obj\Debug\bookslist.baml
 C:\Users\asus\Desktop\BookshopProject\AP01Project\obj\Debug\cart.baml
+C:\Users\asus\Desktop\BookshopProject\AP01Project\obj\Debug\AdminUserSearch.g.cs
+C:\Users\asus\Desktop\BookshopProject\AP01Project\obj\Debug\AdminUserSearch.baml

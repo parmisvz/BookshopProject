@@ -7,7 +7,7 @@ namespace AP01Project
 {
     public class Admin
     {
-        public static List<Admin> Admins { set; get; } 
+        public static List<Admin> Admins = new List<Admin>();
         public string user_name { get; set; }
         public string password { get; set; }
         public string name { get; set; }
@@ -16,22 +16,22 @@ namespace AP01Project
 
         public Admin(string user_name, string password, string name, string phone_number)
         {
-            if (!check_username(user_name))
-            {
-                throw new Exception("username is not valid");
-            }
-            else
-            {
-                this.user_name = user_name;
-                this.password = password;
-                this.name = name;
-                this.phone_number = phone_number;
-                Admins.Add(this);
-            }
+            this.user_name = user_name;
+            this.password = password;
+            this.name = name;
+            this.phone_number = phone_number;
+            Admins.Add(this);
+
+            //string path = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\asus\Desktop\ProjectFile\AP01Project\data\AdminInfo.mdf;Integrated Security=True;Connect Timeout=30";
+            //SqlConnection sconnection = new SqlConnection(path);
+            //sconnection.Open();
+            //string insertcommand = "insert into TAdminInfo values('" + this.user_name + "' , '" + this.name + "' , '" + this.password + "' , '" + this.phone_number + "')";
+            //SqlCommand scommand = new SqlCommand(insertcommand, sconnection);
+            //scommand.ExecuteNonQuery();
+            //sconnection.Close();
         }
-        public bool check_username(string user_name)
+        public static bool check_username(string user_name)
         {
-            Admins = ReadFromSQLAddToList();
             for (int i = 0; i < Admins.Count; i++)
             {
                 if (user_name == Admins[i].user_name)
@@ -47,7 +47,7 @@ namespace AP01Project
         }
         public static bool checkadmin(string username, string pass)
         {
-            Admins=ReadFromSQLAddToList();
+            //Admins=ReadFromSQLAddToList();
             bool accept = false;
             for (int i = 0; i < Admins.Count; i++)
                 if (Admins[i].user_name == username)
@@ -58,22 +58,22 @@ namespace AP01Project
 
             return accept;
         }
-        public static List<Admin> ReadFromSQLAddToList()
-        {
-            string path = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\asus\Desktop\ProjectFile\AP01Project\data\AdminInfo.mdf;Integrated Security=True;Connect Timeout=30";
-            SqlConnection sqlConnection = new SqlConnection(path);
-            string Command = "select * from TAdminInfo";
-            SqlDataAdapter adapter = new SqlDataAdapter(Command, sqlConnection);
-            DataTable dataT = new DataTable();
-            adapter.Fill(dataT);
-            List<Admin> list = new List<Admin>();
-            for (int i = 0; i < dataT.Rows.Count; i++)
-            {
-                Admin temoAdmin = new Admin(dataT.Rows[i][0].ToString(), dataT.Rows[i][2].ToString(), dataT.Rows[i][1].ToString(), dataT.Rows[i][3].ToString());
-                list.Add(temoAdmin);
-            }
-            return list;
-        }
+        //public static List<Admin> ReadFromSQLAddToList()
+        //{
+        //    string path = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\asus\Desktop\ProjectFile\AP01Project\data\AdminInfo.mdf;Integrated Security=True;Connect Timeout=30";
+        //    SqlConnection sqlConnection = new SqlConnection(path);
+        //    string Command = "select * from TAdminInfo";
+        //    SqlDataAdapter adapter = new SqlDataAdapter(Command, sqlConnection);
+        //    DataTable dataT = new DataTable();
+        //    adapter.Fill(dataT);
+        //    List<Admin> list = new List<Admin>();
+        //    for (int i = 0; i < dataT.Rows.Count; i++)
+        //    {
+        //        Admin temoAdmin = new Admin(dataT.Rows[i][0].ToString(), dataT.Rows[i][2].ToString(), dataT.Rows[i][1].ToString(), dataT.Rows[i][3].ToString());
+        //        list.Add(temoAdmin);
+        //    }
+        //    return list;
+        //}
     }
 }
 

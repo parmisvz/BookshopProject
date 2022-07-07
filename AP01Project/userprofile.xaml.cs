@@ -32,7 +32,6 @@ namespace AP01Project
             name.Text = "Name: " + obj.name;
             phone.Text = "Phone: " + obj.phone_number;
             mojodi.Text = "Iinventory: " + obj.mojodi.ToString();
-
         }
 
         private void edit_userinfo(object sender, RoutedEventArgs e)

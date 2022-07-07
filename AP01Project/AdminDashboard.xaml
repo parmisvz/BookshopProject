@@ -97,42 +97,39 @@
                            FontSize="30"
                            HorizontalAlignment="Center"/>
 
-                <StackPanel Grid.Row="1" Grid.Column="1">
+                <StackPanel Grid.Row="1" Grid.Column="1" Height="250" VerticalAlignment="Bottom">
                     <StackPanel Orientation="Horizontal">
+                        <Label Content="Name:"/>
                         <TextBox Name="name"
                         FontFamily="Century Gothic"
                              FontWeight="Light"
-                             Text="name"
+                             Text=""
                              FontSize="20"
                              HorizontalAlignment="Center"
                              Foreground="Black"
                              Background="Transparent"
-                             BorderThickness="0"
                              Width="235"
-                             HorizontalContentAlignment="Left"
                              Opacity="0.5"
                              Height="25"
-                             Margin="63,0,0,0"
+                             Margin="35,0,0,0"
                              />
 
                     </StackPanel>
                     <Border Width="250" Height="2" Background="Black" Opacity="0.5"/>
                     <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
-                        <TextBox Name="username"
-                                 
+                        <Label Content="User Name: "/>
+                        <TextBlock Name="username"
                         FontFamily="Century Gothic"
                              FontWeight="Light"
-                             Text="email"
+                             Text=""
                              FontSize="20"
                              HorizontalAlignment="Center"
                              Foreground="Black"
                              Background="Transparent"
-                             BorderThickness="0"
                              Width="235"
-                             HorizontalContentAlignment="Left"
                              Opacity="0.5"
                              Height="25"
-                             Margin="63,0,0,0"
+                             Margin="5,0,0,0"
                              />
 
 
@@ -140,38 +137,38 @@
                     <Border Width="250" Height="2" Background="Black" Opacity="0.5"/>
 
                     <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                        <Label Content="Phone No: "/>
                         <TextBox Name="phone"
                         FontFamily="Century Gothic"
                              FontWeight="Light"
-                             Text="phone number"
+                             Text=""
                              FontSize="20"
                              HorizontalAlignment="Center"
                              Foreground="Black"
                              Background="Transparent"
-                             BorderThickness="0"
                              Width="235"
-                             HorizontalContentAlignment="Left"
                              Opacity="0.5"
                              Height="25"
-                             Margin="63,0,0,0"/>
+                             Margin="14,0,0,0"
+                             />
                     </StackPanel>
                     <Border Width="250" Height="2" Background="Black" Opacity="0.5"/>
 
                     <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                        <Label Content="Password: "/>
                         <TextBox Name="password"
                         FontFamily="Century Gothic"
                              FontWeight="Light"
-                             Text="password"
+                             Text=""
                              FontSize="20"
                              HorizontalAlignment="Center"
                              Foreground="Black"
                              Background="Transparent"
-                             BorderThickness="0"
                              Width="235"
-                             HorizontalContentAlignment="Left"
                              Opacity="0.5"
                              Height="25"
-                             Margin="63,0,0,0"/>
+                             Margin="20,0,0,0"
+                             />
                     </StackPanel>
                     <Border Width="250" Height="2" Background="Black" Opacity="0.5" />
                     <StackPanel Orientation="Horizontal">
@@ -179,7 +176,6 @@
                         <Button Click="ShowInformation"  Width="100" Height="30" Content="Show Information" Margin="50 10 0 0"/>
                     </StackPanel>
                 </StackPanel>
-
             </Grid>
         </Grid>
 

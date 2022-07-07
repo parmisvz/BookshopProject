@@ -69,16 +69,13 @@ namespace AP01Project
                 {
                     throw new Exception(khata);
                 }
+                if (!Admin.check_username(username.Text))
+                {
+                    throw new Exception("username is not valid");
+                }
                 else
                 {
-                    Admin admin = new Admin(username.Text, pass.Password, name.Text, phone.Text);
-                    //string path = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\asus\Desktop\ProjectFile\AP01Project\data\AdminInfo.mdf;Integrated Security=True;Connect Timeout=30";
-                    //SqlConnection SConnection = new SqlConnection(path);
-                    //SConnection.Open();
-                    //string InsertCommand= "insert into TAdminInfo values('"+ username.Text + "' , '"+ name.Text + "' , '" + pass.Password + "' , '" + phone.Text + "')";
-                    //SqlCommand SCommand=new SqlCommand(InsertCommand, SConnection);
-                    //SCommand.ExecuteNonQuery();
-                    //SConnection.Close();
+                    Admin admin = new Admin(username.Text, pass.Password, name.Text, phone.Text);                  
                     AdminSignIn window2 = new AdminSignIn();
                     window2.Show();
                     this.Close();

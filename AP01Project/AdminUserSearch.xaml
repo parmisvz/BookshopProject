@@ -1,0 +1,64 @@
+﻿<Window x:Class="AP01Project.AdminUserSearch"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AP01Project"
+        mc:Ignorable="d"
+        Title="AdminUserSearch" Height="450" Width="450" AllowsTransparency="True" Background="Transparent"
+        WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+
+    <Grid>
+        <Border CornerRadius="10" Grid.RowSpan="2">
+            <Border.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="#7be9f6" Offset="0.0"/>
+                    <GradientStop Color="#f083da" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+        </Border>
+        <StackPanel>
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <TextBlock  Text="Users Info" Foreground="White" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" 
+                       FontSize="30" Margin="10" FontFamily="Century Gothic">
+                </TextBlock>
+                <Image Source="/Images/acount2-removebg-preview.png" Width="80"/>
+            </StackPanel>
+            
+            <DataGrid Name="dataGridbooks"
+                  Margin="20"
+                  AutoGenerateColumns="False"
+                  
+                  Height="180"
+                  CanUserResizeRows="False"
+                  AlternatingRowBackground="#CFCF"
+                  HorizontalAlignment="Center" Width="414">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="UserName" Width="100" Binding="{Binding user_name}"/>
+                    <DataGridTextColumn Header="Name" Width="100" Binding="{Binding name}"/>
+                    <DataGridTextColumn Header="PhoneNo" Width="100" Binding="{Binding phone_number}"/>
+                    <DataGridTextColumn Header="Account Balance" Width="100" Binding="{Binding mojodi}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+
+
+
+            <Button x:Name="showbooks" Content="Show Books" Click="show_books"
+                Width="100" Height="30"/>
+
+            <TextBox x:Name="SearchBoxUser"
+                     Width="250"
+                     Text="Please enter User Name"
+                     Height="40"
+                     VerticalAlignment="Center"
+                     HorizontalAlignment="Center"
+                     Margin="5"
+                     Grid.Column="1"
+                     Style="{StaticResource ModernTextbox}" TextChanged="SearchBoxUser_TextChanged"/>
+
+            <Border Width="250" Height="2" Background="White" Opacity="0.5" />
+
+            <Button Content="Back" Click="backtodash" Width="50" Height="30" Margin="30"/>
+        </StackPanel>
+    </Grid>
+</Window>

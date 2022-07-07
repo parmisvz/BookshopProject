@@ -51,7 +51,6 @@ namespace AP01Project
                     string x = Users[i].name;
                     return x;
                 }
-
             }
             return null;
         }
@@ -131,6 +130,7 @@ namespace AP01Project
                 return false;
             }
             else return true;
+        }
             //string path = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\asus\Desktop\ProjectFile\AP01Project\data\UserInfo.mdf;Integrated Security=True;Connect Timeout=30";
             //SqlConnection sqlConnection = new SqlConnection(path);
             //string Command = "select * from TUserInfo";
@@ -150,6 +150,35 @@ namespace AP01Project
             //    }
             //}
             //return false;
+
+            public static long SumOfDigits(long number)
+            {
+                long sum = 0;
+                while (number > 0)
+                {
+                    sum += number % 10;
+                    number /= 10;
+                }
+                return sum;
+            }
+            public static bool LuhnCheck(long number)
+            {
+                List<long> digits = new List<long>();
+                while (number > 0)
+                {
+                    digits.Add(number % 10);
+                    number /= 10;
+                }
+                for (int i = 0; i < digits.Count; i++)
+                {
+                    if (i % 2 == 1)
+                    {
+                        digits[i] = SumOfDigits(digits[i] *= 2);
+                    }
+                }
+                long value = digits.Sum();
+                return value % 10 == 0 ? true : false;
+            }
         }
     }
-}
+

@@ -41,8 +41,6 @@ namespace AP01Project
                     string phone = User.Phone_number(user_name.Text);
                     Admin person = new Admin(user_name.Text, password.Password, name, phone);
                     AdminDashboard userdashboard = new AdminDashboard(person);
-                    Console.WriteLine("{0} {1} {2} {3}", user_name.Text, password.Password, name, phone);
-                    Console.WriteLine(user_name.Text.ToString(), password.Password, name, phone);
                     userdashboard.Show();
                     Console.WriteLine();
                     this.Close();                    

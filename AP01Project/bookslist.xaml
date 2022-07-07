@@ -20,8 +20,7 @@
         <StackPanel>
             <DataGrid Name="dataGridbooks"
                   Margin="20"
-                  AutoGenerateColumns="False"
-                  
+                  AutoGenerateColumns="False"                 
                   Height="100"
                   CanUserResizeRows="False"
                   AlternatingRowBackground="#CFCF"
