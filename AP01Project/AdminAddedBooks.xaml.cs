@@ -23,10 +23,10 @@ namespace AP01Project
         {
             InitializeComponent();
         }
-        private void Add(object sender, RoutedEventArgs e)
-        {
-            Book newB = new Book();
-            this.Close();
-        }
+        //private void Add(object sender, RoutedEventArgs e)
+        //{
+        //    Book newB = new Book();
+        //    this.Close();
+        //}
     }
 }

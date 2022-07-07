@@ -72,13 +72,13 @@ namespace AP01Project
                 else
                 {
                     Admin admin = new Admin(username.Text, pass.Password, name.Text, phone.Text);
-                    string path = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\asus\Desktop\ProjectFile\AP01Project\data\AdminInfo.mdf;Integrated Security=True;Connect Timeout=30";
-                    SqlConnection SConnection = new SqlConnection(path);
-                    SConnection.Open();
-                    string InsertCommand= "insert into TAdminInfo values('"+ username.Text + "' , '"+ name.Text + "' , '" + pass.Password + "' , '" + phone.Text + "')";
-                    SqlCommand SCommand=new SqlCommand(InsertCommand, SConnection);
-                    SCommand.ExecuteNonQuery();
-                    SConnection.Close();
+                    //string path = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\asus\Desktop\ProjectFile\AP01Project\data\AdminInfo.mdf;Integrated Security=True;Connect Timeout=30";
+                    //SqlConnection SConnection = new SqlConnection(path);
+                    //SConnection.Open();
+                    //string InsertCommand= "insert into TAdminInfo values('"+ username.Text + "' , '"+ name.Text + "' , '" + pass.Password + "' , '" + phone.Text + "')";
+                    //SqlCommand SCommand=new SqlCommand(InsertCommand, SConnection);
+                    //SCommand.ExecuteNonQuery();
+                    //SConnection.Close();
                     AdminSignIn window2 = new AdminSignIn();
                     window2.Show();
                     this.Close();

@@ -42,6 +42,7 @@
 
 
                 <RadioButton Content="Books List"
+                             Click="showbooks"
                              Height="50"
                              Foreground="Black"
                              Style="{StaticResource MenuButtonTheme}"/>
@@ -50,12 +51,17 @@
                              Height="50"
                              Foreground="Black"
                              Style="{StaticResource MenuButtonTheme}" />
-                <RadioButton x:Name="ShoppingList"
-                             Content="Add To Shopping List"
+                <RadioButton x:Name="cart1" Content="Cart"
+                             Click="cart"
+                             Height="50" 
+                             Foreground="black"
+                             Style="{StaticResource MenuButtonTheme}"/>
+                <RadioButton x:Name="exit"
+                             Content="Exit"
+                             Click="exit_Click" 
                              Height="50"
-                             Foreground="Black"
-                             Style="{StaticResource MenuButtonTheme}" />
-                
+                             Style="{StaticResource MenuButtonTheme}"
+                             Foreground="black"/>
             </StackPanel>
             <TextBox Width="250"
                      Height="40"

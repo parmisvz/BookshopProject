@@ -124,7 +124,7 @@
                              Margin="63,0,0,0"/>
                 </StackPanel>
                 <Border Width="250" Height="2" Background="White" Opacity="0.5"/>
-                <Button Click="Add" Width="100" Height="40" Content="Add" Margin="60,20,60,0"/>
+                <Button Width="100" Height="40" Content="Add" Margin="60,20,60,0"/>
             </StackPanel>
         </Grid>
     </Grid>

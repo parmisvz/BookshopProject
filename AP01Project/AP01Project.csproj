@@ -77,6 +77,12 @@
       <DependentUpon>AdminViewUsers.xaml</DependentUpon>
     </Compile>
     <Compile Include="Book.cs" />
+    <Compile Include="bookslist.xaml.cs">
+      <DependentUpon>bookslist.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="cart.xaml.cs">
+      <DependentUpon>cart.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ListBox.xaml.cs">
       <DependentUpon>ListBox.xaml</DependentUpon>
     </Compile>
@@ -128,7 +134,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="bookslist.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ButtonTheme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="cart.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

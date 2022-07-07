@@ -6,9 +6,9 @@
         xmlns:local="clr-namespace:AP01Project"
         mc:Ignorable="d"
         Title="ListBox" Height="800" Width="450">
-    <Window.DataContext>
-        <local:Book/>
-    </Window.DataContext>
+    <!--<Window.DataContext>
+        --><!--<local:Book/>--><!--
+    </Window.DataContext>-->
     <StackPanel>
         <TextBlock Text="Books" FontSize="36"/>
         <ListBox FontSize="30"

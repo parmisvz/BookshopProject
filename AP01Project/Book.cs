@@ -8,34 +8,20 @@ namespace AP01Project
 {
     public class Book
     {
-        public List<Book> Books { get; set; }
-        public List<int> AllRating { get; set; }
-        public string Title { get; set; }
-        public string Description { get; set; }
+        public List<Book> Books = new List<Book>();
+        public int Id { get; set; }
+        public string Name { get; set; }
+        //public string Description { get; set; }
         public string Author { get; set; }
         public int Price { get; set; }
-        public bool VIP { get; set; }
-        public int Rating { get; set; }
-        public Book()
+        //public bool VIP { get; set; }
+        //public int Rating { get; set; }
+        public Book(int id, string name, string author, int price)
         {
-            Books = ReadFromSQLAddToList();
-        }
-        public static List<Book> ReadFromSQLAddToList()
-        {
-            string path = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\asus\Desktop\ProjectFile\AP01Project\data\BookInfo.mdf;Integrated Security=True;Connect Timeout=30";
-            SqlConnection sqlConnection = new SqlConnection(path);
-            string Command = "select * from TBookInfo";
-            SqlDataAdapter adapter = new SqlDataAdapter(Command, sqlConnection);
-            DataTable dataT = new DataTable();
-            adapter.Fill(dataT);
-            
-            List<Book> list = new List<Book>();
-            for (int i = 0; i < dataT.Rows.Count; i++)
-            {
-                Book temoAdmin = new Book(/*dataT.Rows[i][0].ToString(), dataT.Rows[i][2].ToString(), dataT.Rows[i][1].ToString(), dataT.Rows[i][3].ToString()*/);
-                list.Add(temoAdmin);
-            }
-            return list;
+            Id = id;
+            Name = name;
+            Author = author;
+            Price = price;
         }
     }
 }

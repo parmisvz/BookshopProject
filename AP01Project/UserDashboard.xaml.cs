@@ -32,5 +32,24 @@ namespace AP01Project
             userprofile.Show();
             this.Close();
         }
+
+        private void showbooks(object sender, RoutedEventArgs e)
+        {
+            bookslist bookslist = new bookslist(obj);
+            bookslist.Show();
+            this.Close();
+        }
+
+        private void cart(object sender, RoutedEventArgs e)
+        {
+            cart cart = new cart(obj);
+            cart.Show();
+            this.Close();
+        }
+
+        private void exit_Click(object sender, RoutedEventArgs e)
+        {
+            App.Current.Shutdown();
+        }
     }
 }

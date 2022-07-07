@@ -63,12 +63,13 @@ namespace AP01Project
                 else
                 {
                     User cust = new User(username.Text, pass.Password, name.Text, phone.Text);
+                    User.addtousers(cust, username.Text);
                     UserSignIn window1 = new UserSignIn();
 
-                    string path = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\asus\Desktop\ProjectFile\AP01Project\data\UserInfo.mdf;Integrated Security=True;Connect Timeout=30";
+                    string path = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Lenovo\Desktop\AP\BookshopProject\AP01Project\data\UserInfo.mdf;Integrated Security=True;Connect Timeout=30";
                     SqlConnection SConnection = new SqlConnection(path);
                     SConnection.Open();
-                    string Command="insert into TUserInfo values('"+ username.Text + "','"+ username.Text + "','"+ name.Text + "','"+ phone.Text + "','"+0+"')";
+                    string Command = "insert into TUserInfo values('" + username.Text + "','" + username.Text + "','" + name.Text + "','" + phone.Text + "','" + 0 + "')";
                     SqlCommand SCommand = new SqlCommand(Command, SConnection);
                     SCommand.BeginExecuteNonQuery();
                     SConnection.Close();
