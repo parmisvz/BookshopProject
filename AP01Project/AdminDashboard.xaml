@@ -63,6 +63,12 @@
                              Foreground="Black"
                              FontSize="22"
                              Style="{StaticResource MenuButtonTheme}" Checked="SearchUserForm_Checked" />
+                <RadioButton x:Name="AddBooks"
+                             Content="Add Books"
+                             Height="50"
+                             Foreground="Black"
+                             FontSize="22"
+                             Style="{StaticResource MenuButtonTheme}" Checked="AddBooks_Checked"  />
             </StackPanel>
 
             <TextBox Width="250"

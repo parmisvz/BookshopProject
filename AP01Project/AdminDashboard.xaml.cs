@@ -64,6 +64,12 @@ namespace AP01Project
         {
 
         }
+
+        private void AddBooks_Checked(object sender, RoutedEventArgs e)
+        {
+            AdminAddedBooks adminAddedBooks=new AdminAddedBooks();
+            adminAddedBooks.Show();
+        }
     }
 }
 

@@ -15,18 +15,13 @@ using System.Windows.Shapes;
 namespace AP01Project
 {
     /// <summary>
-    /// Interaction logic for AdminAddedBooks.xaml
+    /// Interaction logic for AdminEditProfile.xaml
     /// </summary>
-    public partial class AdminAddedBooks : Window
+    public partial class AdminEditProfile : Window
     {
-        public AdminAddedBooks()
+        public AdminEditProfile()
         {
             InitializeComponent();
-        }
-        private void Add(object sender, RoutedEventArgs e)
-        {
-            Book newB = new Book();
-            this.Close();
         }
     }
 }

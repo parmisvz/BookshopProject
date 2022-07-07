@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\asus\Desktop\BookshopProject\AP01Project\App.xaml
-16129078348
+18-62203813
 
-27993225324
+291820721361
 151937372271
-AdminAddedBooks.xaml;AdminChoose.xaml;AdminDashboard.xaml;AdminSignIn.xaml;AdminSignUp.xaml;AdminViewUsers.xaml;ButtonTheme.xaml;MainWindow.xaml;MVVM\View\ProfileViewer.xaml;Theme\MenuButtonTheme.xaml;Theme\TextBoxTheme.xaml;UserChoose.xaml;UserDashboard.xaml;userprofile.xaml;UserSignIn.xaml;UserSignUp.xaml;
+AdminAddedBooks.xaml;AdminChoose.xaml;AdminDashboard.xaml;AdminEditProfile.xaml;AdminSignIn.xaml;AdminSignUp.xaml;AdminViewUsers.xaml;ButtonTheme.xaml;ListBox.xaml;MainWindow.xaml;MVVM\View\ProfileViewer.xaml;Theme\MenuButtonTheme.xaml;Theme\TextBoxTheme.xaml;UserChoose.xaml;UserDashboard.xaml;userprofile.xaml;UserSignIn.xaml;UserSignUp.xaml;
 
-False
+True
 

@@ -50,6 +50,12 @@
                              Height="50"
                              Foreground="Black"
                              Style="{StaticResource MenuButtonTheme}" />
+                <RadioButton x:Name="ShoppingList"
+                             Content="Add To Shopping List"
+                             Height="50"
+                             Foreground="Black"
+                             Style="{StaticResource MenuButtonTheme}" />
+                
             </StackPanel>
             <TextBox Width="250"
                      Height="40"

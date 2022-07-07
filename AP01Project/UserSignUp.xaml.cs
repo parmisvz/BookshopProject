@@ -63,7 +63,6 @@ namespace AP01Project
                 else
                 {
                     User cust = new User(username.Text, pass.Password, name.Text, phone.Text);
-                    User.addtousers(cust, username.Text);
                     UserSignIn window1 = new UserSignIn();
 
                     string path = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\asus\Desktop\ProjectFile\AP01Project\data\UserInfo.mdf;Integrated Security=True;Connect Timeout=30";

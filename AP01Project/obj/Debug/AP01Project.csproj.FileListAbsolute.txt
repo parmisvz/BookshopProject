@@ -170,3 +170,8 @@ C:\Users\asus\Desktop\BookshopProject\AP01Project\obj\Debug\AP01Project.csproj.G
 C:\Users\asus\Desktop\BookshopProject\AP01Project\obj\Debug\AP01Project.csproj.CoreCompileInputs.cache
 C:\Users\asus\Desktop\BookshopProject\AP01Project\obj\Debug\AP01Project.exe
 C:\Users\asus\Desktop\BookshopProject\AP01Project\obj\Debug\AP01Project.pdb
+C:\Users\asus\Desktop\BookshopProject\AP01Project\obj\Debug\AdminEditProfile.g.cs
+C:\Users\asus\Desktop\BookshopProject\AP01Project\obj\Debug\AdminEditProfile.baml
+C:\Users\asus\Desktop\BookshopProject\AP01Project\obj\Debug\ListBox.g.cs
+C:\Users\asus\Desktop\BookshopProject\AP01Project\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\asus\Desktop\BookshopProject\AP01Project\obj\Debug\ListBox.baml
