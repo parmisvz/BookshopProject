@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="BuyBook" Height="450" Width="380" AllowsTransparency="True" Background="Transparent"
         WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" 
-         MouseDown="MainWindow_OnMousedown">
+         >
     <Grid>
         <Grid>
             <Grid.RowDefinitions>
@@ -32,6 +32,25 @@
             </StackPanel>
 
             <StackPanel Grid.Row="1">
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Name="total" 
+                           FontFamily="Century Gothic"
+                               FontSize="20" 
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"
+                               Foreground="White"
+                               Background="Transparent"
+                               Opacity="1"
+                               Width="235"
+                              
+                               />
+                    <Button Width="100"
+                            Height="30"
+                            Content="total_price"
+                            Click="price">
+                        
+                    </Button>
+                </StackPanel>
                 <StackPanel Orientation="Horizontal">
                     <TextBox Name="CardNo"
                         FontFamily="Century Gothic"
@@ -75,8 +94,8 @@
                 <Border Width="250" Height="2" Background="White" Opacity="0.5"/>
                 
                 <StackPanel Orientation="Horizontal">
-                    <Button  Click="Buy" Width="90" Height="30" Content="sign in" Margin="80,20,60,0"/>
-                    <Button  Click="Back" Width="90" Height="30" Content="sign in" Margin="0,20,60,0"/>
+                    <Button  Click="Buy" Width="90" Height="30" Content="Buy" Margin="80,20,60,0"/>
+                    <Button  Click="Back" Width="90" Height="30" Content="Back" Margin="0,20,60,0"/>
                 </StackPanel>
                
             </StackPanel>

@@ -11,20 +11,22 @@
         Background="Transparent"
         AllowsTransparency="True"
         Height="500" Width="600"
-        Title="UserDashboard">
+        Title="UserDashboard"
+        WindowStartupLocation="CenterScreen">
+    <Grid>
 
-    <Border Background="AliceBlue"
+        <Border Background="AliceBlue"
             CornerRadius="20">
-        <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="200"/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="75"/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
-            <TextBlock Text="KetabKhan"
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="200"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="75"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <TextBlock Text="KetabKhan"
                        VerticalAlignment="Center"
                        HorizontalAlignment="Left"
                        Foreground="Black"
@@ -32,8 +34,8 @@
                        FontWeight="Bold"
                        Margin="20 0 0 0"/>
 
-            <StackPanel Grid.Row="1">
-                <RadioButton Content="Profile"
+                <StackPanel Grid.Row="1">
+                    <RadioButton Content="Profile"
                              Height="50"
                              Click="open_userprofile"
                              Foreground="Black"
@@ -41,29 +43,35 @@
                              IsChecked="True"/>
 
 
-                <RadioButton Content="Books List"
+                    <RadioButton Content="Books List"
                              Click="showbooks"
                              Height="50"
                              Foreground="Black"
                              Style="{StaticResource MenuButtonTheme}"/>
-                <RadioButton x:Name="SearchForm"
+                    <RadioButton x:Name="SearchForm"
                              Content="Search Book"
                              Height="50"
                              Foreground="Black"
                              Style="{StaticResource MenuButtonTheme}" />
-                <RadioButton x:Name="cart1" Content="Cart"
+                    <RadioButton x:Name="cart1" Content="Cart"
                              Click="cart"
                              Height="50" 
                              Foreground="black"
                              Style="{StaticResource MenuButtonTheme}"/>
-                <RadioButton x:Name="exit"
+                    <RadioButton Name="buy"
+                                 Content="Buy"
+                                 Click="BUY"
+                                 Height="50"
+                                 Style="{StaticResource MenuButtonTheme}"/>
+                    <RadioButton x:Name="exit"
                              Content="Exit"
                              Click="exit_Click" 
                              Height="50"
                              Style="{StaticResource MenuButtonTheme}"
                              Foreground="black"/>
-            </StackPanel>
-            <TextBox Width="250"
+                   
+                </StackPanel>
+                <TextBox Width="250"
                      Height="40"
                      VerticalAlignment="Center"
                      HorizontalAlignment="Left"
@@ -71,19 +79,20 @@
                      Grid.Column="1"
                      Style="{StaticResource ModernTextbox}"
                      />
-            <ContentControl Grid.Row="1"
+                <ContentControl Grid.Row="1"
                             Grid.Column="1"
                             Margin="10"
                             Content="{Binding CurrentView}"/>
-            <StackPanel Grid.Row="1" Grid.Column="1">
-                <Image Source="/Images/white-removebg-preview.png" Width="200" Margin="10,10,10,10" />
-                <TextBlock Name="welcome" Text="Welcome Dear Customer!" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20">
+                <StackPanel Grid.Row="1" Grid.Column="1">
+                    <Image Source="/Images/white-removebg-preview.png" Width="200" Margin="10,10,10,10" />
+                    <TextBlock Name="welcome" Text="Welcome Dear Customer!" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20">
 
-                </TextBlock>
-            </StackPanel>
-        </Grid>
+                    </TextBlock>
+                </StackPanel>
+            </Grid>
 
 
-    </Border>
+        </Border>
+    </Grid>
 </Window>
 

@@ -19,24 +19,62 @@ namespace AP01Project
     /// </summary>
     public partial class BuyBook : Window
     {
-        public BuyBook()
+        User obj;
+        public BuyBook(User obj)
         {
+            this.obj = obj;
             InitializeComponent();
         }
         private void Buy(object sender, RoutedEventArgs e)
         {
-            if (!User.LuhnCheck(Int64.Parse(CardNo.Text)))
+            try
             {
-                throw new Exception("Ivalid Card no");
+                int a = 0, b = 0;
+                if (!User.LuhnCheck(Int64.Parse(CardNo.Text)))
+                {
+                    throw new Exception("Invalid Card no");
+                }
+                else
+                {
+                    a = 1;
+                }
+                if (int.Parse(CVV2.Text)<10 || int.Parse(CVV2.Text)>=1000)
+                {
+                    throw new Exception("Invalid cvv2");
+                }
+                else
+                {
+                    b = 1;
+                }
+                if (a==1 && b==1)
+                {
+                    MessageBox.Show("Thanks for your shop.");
+                    for (int i = 0; i < obj.Library.Count; i++)
+                    {
+                        obj.bought.Add(obj.Library[i]);
+                    }
+                }
             }
-            if (CVV2.Text.Length!=2 || CVV2.Text.Length != 3)
+            catch (Exception ex)
             {
-                throw new Exception("Ivalid cvv2");
+                MessageBox.Show(ex.Message);
             }
         }
         private void Back(object sender, RoutedEventArgs e)
         {
+            UserDashboard userDashboard = new UserDashboard(obj);
+            userDashboard.Show();
             this.Close();
+        }
+
+        private void price(object sender, RoutedEventArgs e)
+        {
+            int sum = 0;
+            for(int i = 0; i < obj.Library.Count; i++)
+            {
+                sum+=obj.Library[i].Price;
+            }
+            total.Text = sum.ToString();
         }
     }
 }

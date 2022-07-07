@@ -23,7 +23,7 @@ namespace AP01Project
         string filterField = "UserName";
         private void show_books(object sender, RoutedEventArgs e)
         {
-            string path= @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Lenovo\Desktop\WpfApp1\data\user2.mdf;Integrated Security=True;Connect Timeout=30";
+            string path= @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Lenovo\Desktop\parmisproject\BookshopProject\AP01Project\data\UserInfo.mdf;Integrated Security=True;Connect Timeout=30";
             SqlConnection con=new SqlConnection(path);
             con.Open();
             string command;

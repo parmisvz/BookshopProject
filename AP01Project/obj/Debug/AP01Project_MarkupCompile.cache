@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\asus\Desktop\BookshopProject\AP01Project\obj\Debug\
+C:\Users\Lenovo\Desktop\parmisproject\BookshopProject\AP01Project\obj\Debug\
 AP01Project
 none
 false
 DEBUG;TRACE
-C:\Users\asus\Desktop\BookshopProject\AP01Project\App.xaml
-21-1891036851
+C:\Users\Lenovo\Desktop\parmisproject\BookshopProject\AP01Project\App.xaml
+22-819380494
 
-31-1267066295
+32-587610964
 151937372271
-AdminAddedBooks.xaml;AdminChoose.xaml;AdminDashboard.xaml;AdminEditProfile.xaml;AdminSignIn.xaml;AdminSignUp.xaml;AdminUserSearch.xaml;AdminViewUsers.xaml;bookslist.xaml;ButtonTheme.xaml;cart.xaml;ListBox.xaml;MainWindow.xaml;MVVM\View\ProfileViewer.xaml;Theme\MenuButtonTheme.xaml;Theme\TextBoxTheme.xaml;UserChoose.xaml;UserDashboard.xaml;userprofile.xaml;UserSignIn.xaml;UserSignUp.xaml;
+AdminAddedBooks.xaml;AdminChoose.xaml;AdminDashboard.xaml;AdminEditProfile.xaml;AdminSignIn.xaml;AdminSignUp.xaml;AdminUserSearch.xaml;AdminViewUsers.xaml;bookslist.xaml;ButtonTheme.xaml;BuyBook.xaml;cart.xaml;ListBox.xaml;MainWindow.xaml;MVVM\View\ProfileViewer.xaml;Theme\MenuButtonTheme.xaml;Theme\TextBoxTheme.xaml;UserChoose.xaml;UserDashboard.xaml;userprofile.xaml;UserSignIn.xaml;UserSignUp.xaml;
 
 False
 

@@ -20,15 +20,55 @@ namespace AP01Project
             this.password = password;
             this.name = name;
             this.phone_number = phone_number;
-            Admins.Add(this);
+           // Admins.Add(this);
 
-            //string path = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\asus\Desktop\ProjectFile\AP01Project\data\AdminInfo.mdf;Integrated Security=True;Connect Timeout=30";
-            //SqlConnection sconnection = new SqlConnection(path);
-            //sconnection.Open();
-            //string insertcommand = "insert into TAdminInfo values('" + this.user_name + "' , '" + this.name + "' , '" + this.password + "' , '" + this.phone_number + "')";
-            //SqlCommand scommand = new SqlCommand(insertcommand, sconnection);
-            //scommand.ExecuteNonQuery();
-            //sconnection.Close();
+            
+        }
+        public static  string Name(string user_name)
+        {
+            int j = 0;
+            for(int i=0;i<Admins.Count;i++)
+            {
+                if(Admins[i].user_name == user_name)
+                {
+                    return Admins[i].name;
+                }
+                else
+                {
+                    j++;
+                }
+            }
+            if (j == Admins.Count)
+            {
+                return "";
+            }
+            else
+            {
+                return "";
+            }
+        }
+        public static string Phone_number(string user_name)
+        {
+            int j = 0;
+            for (int i = 0; i < Admins.Count; i++)
+            {
+                if (Admins[i].user_name == user_name)
+                {
+                    return Admins[i].phone_number;
+                }
+                else
+                {
+                    j++;
+                }
+            }
+            if (j == Admins.Count)
+            {
+                return "";
+            }
+            else
+            {
+                return "";
+            }
         }
         public static bool check_username(string user_name)
         {
@@ -47,7 +87,7 @@ namespace AP01Project
         }
         public static bool checkadmin(string username, string pass)
         {
-            //Admins=ReadFromSQLAddToList();
+            Admins=ReadFromSQLAddToList();
             bool accept = false;
             for (int i = 0; i < Admins.Count; i++)
                 if (Admins[i].user_name == username)
@@ -58,22 +98,22 @@ namespace AP01Project
 
             return accept;
         }
-        //public static List<Admin> ReadFromSQLAddToList()
-        //{
-        //    string path = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\asus\Desktop\ProjectFile\AP01Project\data\AdminInfo.mdf;Integrated Security=True;Connect Timeout=30";
-        //    SqlConnection sqlConnection = new SqlConnection(path);
-        //    string Command = "select * from TAdminInfo";
-        //    SqlDataAdapter adapter = new SqlDataAdapter(Command, sqlConnection);
-        //    DataTable dataT = new DataTable();
-        //    adapter.Fill(dataT);
-        //    List<Admin> list = new List<Admin>();
-        //    for (int i = 0; i < dataT.Rows.Count; i++)
-        //    {
-        //        Admin temoAdmin = new Admin(dataT.Rows[i][0].ToString(), dataT.Rows[i][2].ToString(), dataT.Rows[i][1].ToString(), dataT.Rows[i][3].ToString());
-        //        list.Add(temoAdmin);
-        //    }
-        //    return list;
-        //}
+        public static List<Admin> ReadFromSQLAddToList()
+        {
+            string path = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Lenovo\Desktop\parmisproject\BookshopProject\AP01Project\data\AdminInfo.mdf;Integrated Security=True;Connect Timeout=30";
+            SqlConnection sqlConnection = new SqlConnection(path);
+            string Command = "select * from TAdminInfo";
+            SqlDataAdapter adapter = new SqlDataAdapter(Command, sqlConnection);
+            DataTable dataT = new DataTable();
+            adapter.Fill(dataT);
+            List<Admin> list = new List<Admin>();
+            for (int i = 0; i < dataT.Rows.Count; i++)
+            {
+                Admin temoAdmin = new Admin(dataT.Rows[i][0].ToString(), dataT.Rows[i][2].ToString(), dataT.Rows[i][1].ToString(), dataT.Rows[i][3].ToString());
+                list.Add(temoAdmin);
+            }
+            return list;
+        }
     }
 }
 

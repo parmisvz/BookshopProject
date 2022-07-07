@@ -77,6 +77,16 @@ namespace AP01Project
                 {
                     Admin admin = new Admin(username.Text, pass.Password, name.Text, phone.Text);                  
                     AdminSignIn window2 = new AdminSignIn();
+                    string path = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Lenovo\Desktop\parmisproject\BookshopProject\AP01Project\data\AdminInfo.mdf;Integrated Security=True;Connect Timeout=30";
+                    SqlConnection SConnection = new SqlConnection(path);
+                    SConnection.Open();
+                    string Command = "INSERT INTO TAdminInfo(AdminUserName,AdminName,AdminPassword,AdminPhoneNo) VALUES('" + username.Text.Trim() + "','" + name.Text.Trim() + "','" + password.Password.Trim() + "','" + phone.Text.Trim() + "')";
+                   
+                    SqlDataAdapter adapter = new SqlDataAdapter();
+                    adapter.InsertCommand = new SqlCommand(Command, SConnection);
+                    adapter.InsertCommand.ExecuteNonQuery();
+                    
+                    SConnection.Close();
                     window2.Show();
                     this.Close();
                 }

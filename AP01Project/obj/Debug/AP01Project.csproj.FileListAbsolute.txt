@@ -198,7 +198,6 @@ C:\Users\Lenovo\Desktop\parmisproject\BookshopProject\AP01Project\obj\Debug\user
 C:\Users\Lenovo\Desktop\parmisproject\BookshopProject\AP01Project\obj\Debug\UserSignIn.g.cs
 C:\Users\Lenovo\Desktop\parmisproject\BookshopProject\AP01Project\obj\Debug\UserSignUp.g.cs
 C:\Users\Lenovo\Desktop\parmisproject\BookshopProject\AP01Project\obj\Debug\App.g.cs
-C:\Users\Lenovo\Desktop\parmisproject\BookshopProject\AP01Project\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Users\Lenovo\Desktop\parmisproject\BookshopProject\AP01Project\obj\Debug\AP01Project_MarkupCompile.cache
 C:\Users\Lenovo\Desktop\parmisproject\BookshopProject\AP01Project\obj\Debug\AP01Project_MarkupCompile.lref
 C:\Users\Lenovo\Desktop\parmisproject\BookshopProject\AP01Project\obj\Debug\App.baml
@@ -233,3 +232,7 @@ C:\Users\asus\Desktop\BookshopProject\AP01Project\obj\Debug\bookslist.baml
 C:\Users\asus\Desktop\BookshopProject\AP01Project\obj\Debug\cart.baml
 C:\Users\asus\Desktop\BookshopProject\AP01Project\obj\Debug\AdminUserSearch.g.cs
 C:\Users\asus\Desktop\BookshopProject\AP01Project\obj\Debug\AdminUserSearch.baml
+C:\Users\Lenovo\Desktop\parmisproject\BookshopProject\AP01Project\obj\Debug\AdminUserSearch.g.cs
+C:\Users\Lenovo\Desktop\parmisproject\BookshopProject\AP01Project\obj\Debug\BuyBook.g.cs
+C:\Users\Lenovo\Desktop\parmisproject\BookshopProject\AP01Project\obj\Debug\AdminUserSearch.baml
+C:\Users\Lenovo\Desktop\parmisproject\BookshopProject\AP01Project\obj\Debug\BuyBook.baml

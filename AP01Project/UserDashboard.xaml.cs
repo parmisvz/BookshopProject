@@ -51,5 +51,12 @@ namespace AP01Project
         {
             App.Current.Shutdown();
         }
+
+        private void BUY(object sender, RoutedEventArgs e)
+        {
+            BuyBook buyBook = new BuyBook(obj);
+            buyBook.Show();
+            this.Close();
+        }
     }
 }

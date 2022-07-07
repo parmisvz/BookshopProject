@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace AP01Project
 {
@@ -36,12 +38,29 @@ namespace AP01Project
 
         private void edit_userinfo(object sender, RoutedEventArgs e)
         {
-            obj.user_name = username.Text;
-            obj.name = name.Text;
-            obj.phone_number = phone.Text;
-            obj.mojodi = int.Parse(mojodi.Text);
-            MessageBox.Show("Your information edited successfully.");
+            try
+            {
 
+
+                obj.user_name = username.Text;
+                obj.name = name.Text;
+                obj.phone_number = phone.Text;
+                obj.mojodi = int.Parse(mojodi.Text);
+                SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Lenovo\Desktop\parmisproject\BookshopProject\AP01Project\data\UserInfo.mdf;Integrated Security=True;Connect Timeout=30");
+                con.Open();
+                string command;
+                command = "UPDATE TUserInfo SET user_name='" + username.Text + "',name='" + name.Text + "',phone_number='" + phone.Text + "' WHERE password='" + obj.password + "'     ";
+                SqlCommand com = new SqlCommand(command, con);
+                com.BeginExecuteNonQuery();
+                con.Close();
+
+
+                MessageBox.Show("Your information edited successfully.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
         }
     }
