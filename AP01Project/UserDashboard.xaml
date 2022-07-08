@@ -36,7 +36,7 @@
 
                 <StackPanel Grid.Row="1">
                     <RadioButton Content="Profile"
-                             Height="50"
+                             Height="45"
                              Click="open_userprofile"
                              Foreground="Black"
                              Style="{StaticResource MenuButtonTheme}"
@@ -45,28 +45,42 @@
 
                     <RadioButton Content="Books List"
                              Click="showbooks"
-                             Height="50"
+                             Height="45"
                              Foreground="Black"
                              Style="{StaticResource MenuButtonTheme}"/>
-                    <RadioButton x:Name="SearchForm"
-                             Content="Search Book"
-                             Height="50"
-                             Foreground="Black"
-                             Style="{StaticResource MenuButtonTheme}" />
+                   
                     <RadioButton x:Name="cart1" Content="Cart"
                              Click="cart"
-                             Height="50" 
+                             Height="45" 
                              Foreground="black"
                              Style="{StaticResource MenuButtonTheme}"/>
                     <RadioButton Name="buy"
-                                 Content="Buy"
+                                 Content="Buy with credit"
                                  Click="BUY"
-                                 Height="50"
+                                 Height="45"
                                  Style="{StaticResource MenuButtonTheme}"/>
+                    <RadioButton  Content="Buy with balance"
+                                  Click="buywithbalance"
+                                  Height="45"
+                                 Style="{StaticResource MenuButtonTheme}"
+                                  
+                                
+                                 />
+                    <RadioButton Content="BookMark"
+                                 Click="bookmark"
+                                 Style="{StaticResource MenuButtonTheme}"
+                                 Height="45"/>
+                    <RadioButton Name="Bought"
+                                 Content="Bought"
+                                 Click="Boughtbooks"
+                                Height="45"
+                                 Style="{StaticResource MenuButtonTheme}"/>
+                    <RadioButton Name="Buy_online" Content="Increase balance" Height="50" Style="{StaticResource  MenuButtonTheme}"
+                                 Click="buyonline"/>
                     <RadioButton x:Name="exit"
                              Content="Exit"
                              Click="exit_Click" 
-                             Height="50"
+                             Height="45"
                              Style="{StaticResource MenuButtonTheme}"
                              Foreground="black" Checked="exit_Checked"/>
                    

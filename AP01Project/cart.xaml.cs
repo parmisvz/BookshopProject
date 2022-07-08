@@ -38,6 +38,7 @@ namespace AP01Project
                 if (obj.Library[i].Id == int.Parse(shenase.Text))
                 {
                     obj.Library.RemoveAt(i);
+                    
                     cart2.Items.Refresh();
                 }
             }

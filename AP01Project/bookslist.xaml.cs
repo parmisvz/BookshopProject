@@ -55,7 +55,10 @@ namespace AP01Project
             string author = data.Rows[x - 1][2].ToString();
             int price = int.Parse(data.Rows[x - 1][3].ToString());
             Book book = new Book(index, name, author, price , 0);
+            book.Image=data.Rows[x - 1][4].ToString();
+            book.Pdf=data.Rows[x - 1][5].ToString();
             obj.Library.Add(book);
+            
             MessageBox.Show("The book added successfully to your cart.");
         }
 
@@ -66,5 +69,39 @@ namespace AP01Project
             this.Close();
 
         }
+
+        private void searchbook(object sender, RoutedEventArgs e)
+        {
+            string pathParmis = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Lenovo\Desktop\AP\BookshopProject\AP01Project\data\BookInfo.mdf;Integrated Security=True;Connect Timeout=30";
+            string pathZahra = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Lenovo\Desktop\AP\BookshopProject\AP01Project\data\BookInfo.mdf;Integrated Security=True;Connect Timeout=30";
+            SqlConnection con = new SqlConnection(pathZahra);
+            con.Open();
+            string command;
+            command = "select * from TBookInfo Where Name Like '%" + search.Text.Trim() + "%' or Author Like '%" + search.Text.Trim() + "%'";
+            SqlDataAdapter adapter = new SqlDataAdapter(command, con);
+            DataTable data = new DataTable();
+            adapter.Fill(data);
+            dataGridbooks.ItemsSource = data.DefaultView;
+        }
+
+        private void showthebook(object sender, RoutedEventArgs e)
+        { 
+        //{
+        //    SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Lenovo\Desktop\AP\BookshopProject\AP01Project\data\BookInfo.mdf;Integrated Security=True;Connect Timeout=30");
+        //    con.Open();
+        //    string command;
+        //    command = "select * from TBookInfo where Id Like '%"+ int.Parse(shenasetoshow.Text.Trim())+"%' ";
+        //    SqlDataAdapter adapter = new SqlDataAdapter(command, con);
+        //    DataTable data = new DataTable();
+        //    adapter.Fill(data);
+        //    showthebook showthebook = new showthebook(obj,data);
+        
+            
+            
+            showthebook showthebook = new showthebook(obj,shenasetoshow.Text);
+            showthebook.Show();
+            this.Close();
+
+    }
     }
 }

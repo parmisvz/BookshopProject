@@ -52,6 +52,7 @@ namespace AP01Project
                     for (int i = 0; i < obj.Library.Count; i++)
                     {
                         obj.bought.Add(obj.Library[i]);
+                        obj.savedbooks=obj.savedbooks+obj.Library[i].Id.ToString()+" ";
                     }
                 }
             }

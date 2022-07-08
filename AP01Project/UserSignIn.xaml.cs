@@ -32,8 +32,7 @@ namespace AP01Project
         }
         private void enter(object sender, RoutedEventArgs e)
         {
-            try
-            {
+           
                 if (User.checkuser(user_name.Text, password.Password))
                 {
                     string name = User.Name(user_name.Text);
@@ -47,11 +46,7 @@ namespace AP01Project
                 {
                     throw new Exception("The information is wrong.you cant enter.");
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            
         }
     }
 }

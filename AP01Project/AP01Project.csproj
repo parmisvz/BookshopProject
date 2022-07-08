@@ -80,14 +80,26 @@
       <DependentUpon>AdminUserSearch.xaml</DependentUpon>
     </Compile>
     <Compile Include="Book.cs" />
+    <Compile Include="BookMark.xaml.cs">
+      <DependentUpon>BookMark.xaml</DependentUpon>
+    </Compile>
     <Compile Include="bookslist.xaml.cs">
       <DependentUpon>bookslist.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="bought.xaml.cs">
+      <DependentUpon>bought.xaml</DependentUpon>
     </Compile>
     <Compile Include="BuyBook.xaml.cs">
       <DependentUpon>BuyBook.xaml</DependentUpon>
     </Compile>
+    <Compile Include="buywithbalance.xaml.cs">
+      <DependentUpon>buywithbalance.xaml</DependentUpon>
+    </Compile>
     <Compile Include="cart.xaml.cs">
       <DependentUpon>cart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="increasemojodi.xaml.cs">
+      <DependentUpon>increasemojodi.xaml</DependentUpon>
     </Compile>
     <Compile Include="ListBox.xaml.cs">
       <DependentUpon>ListBox.xaml</DependentUpon>
@@ -96,6 +108,12 @@
       <DependentUpon>ProfileViewer.xaml</DependentUpon>
     </Compile>
     <Compile Include="ShoppingCart.cs" />
+    <Compile Include="showboughtbook.xaml.cs">
+      <DependentUpon>showboughtbook.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="showthebook.xaml.cs">
+      <DependentUpon>showthebook.xaml</DependentUpon>
+    </Compile>
     <Compile Include="User.cs" />
     <Compile Include="UserChoose.xaml.cs">
       <DependentUpon>UserChoose.xaml</DependentUpon>
@@ -144,7 +162,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="BookMark.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="bookslist.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="bought.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -156,7 +182,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="buywithbalance.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="cart.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="increasemojodi.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -182,6 +216,14 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="MVVM\View\ProfileViewer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="showboughtbook.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="showthebook.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

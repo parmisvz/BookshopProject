@@ -27,11 +27,11 @@ namespace AP01Project
         }
         public void SearchQuery(string value)
         {          
-            string pathParmis = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\asus\Desktop\ProjectFile\AP01Project\data\BookInfo.mdf;Integrated Security=True;Connect Timeout=30";
+            string pathParmis = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Lenovo\Desktop\AP\BookshopProject\AP01Project\data\BookInfo.mdf;Integrated Security=True;Connect Timeout=30";
             SqlConnection con = new SqlConnection(pathParmis);
             con.Open();
             string command;
-            command = "select * from TBookInfo Where Title Like '%" + value + "%' or Author Like '%" + value + "%'";
+            command = "select * from TBookInfo Where Name Like '%" + value + "%' or Author Like '%" + value + "%'";
             SqlDataAdapter adapter = new SqlDataAdapter(command, con);
             DataTable data = new DataTable();
             adapter.Fill(data);

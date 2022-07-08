@@ -91,25 +91,7 @@
 
                 </StackPanel>
                 <Border Width="250" Height="2" Background="White" Opacity="0.5"/>
-                <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
-                    <TextBox Name="mojodi"
-                        FontFamily="Century Gothic"
-                             FontWeight="Light"
-                             
-                             FontSize="20"
-                             HorizontalAlignment="Center"
-                             Foreground="White"
-                             Background="Transparent"
-                             
-                             Width="235"
-                            
-                             Opacity="0.5"
-                             Height="25"
-                             Margin="63,0,0,0"/>
-                    <Image Source="/Images/bank-removebg-preview.png" Width="25"/>
-
-                </StackPanel>
-                <Border Width="250" Height="2" Background="White" Opacity="0.5"/>
+               
 
                 <Button  Click="show_userinfo" Width="90" Height="30" Content="Show info" Margin="60,10,60,0"/>
                 <Button Click="edit_userinfo" x:Name="edit_info" Width="90" Height="30" Content="Edit info" Margin="60,10,60,0"/>

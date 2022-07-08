@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AP01Project"
        mc:Ignorable="d"
-        Title="bookslist" Height="450" Width="380" AllowsTransparency="True" Background="Transparent"
+        Title="bookslist" Height="700" Width="380" AllowsTransparency="True" Background="Transparent"
         WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
 
     <Grid>
@@ -33,14 +33,20 @@
                     <DataGridTextColumn Header="Price" Width="100" Binding="{Binding Price}"/>
                 </DataGrid.Columns>
             </DataGrid>
-
-            <Button x:Name="showbooks" Content="Show Books" Click="show_books"
-                Width="100" Margin="20,0,0,0" Height="30"/>
-
+            <Button x:Name="showbooks" Content="Show All Books" Click="show_books"
+                Width="100" Height="30"/>
+            <TextBlock Text="Please enter the name of the book or author" Margin="20" Foreground="White" HorizontalAlignment="Center"/>
+            <TextBox Name="search" HorizontalAlignment="Center" BorderThickness="0" Background="Transparent"/>
+            <Border Width="250" Height="2" Background="White" Opacity="0.5"/>
+            <Button x:Name="searchbox" Width="100" Height="30" Margin="10" HorizontalAlignment="Center" Content="Search" Click="searchbook" />
             <TextBlock Text="Please enter the id of the book to add to cart" Margin="20" Foreground="White" HorizontalAlignment="Center"/>
             <TextBox Name="shenase" HorizontalAlignment="Center" BorderThickness="0" Background="Transparent"/>
             <Border Width="250" Height="2" Background="White" Opacity="0.5"/>
-            <Button x:Name="addtolist" Width="100" Height="30" Margin="20" HorizontalAlignment="Center" Content="Add to cart" Click="add_tocart" />
+            <Button x:Name="addtolist" Width="100" Height="30" Margin="10" HorizontalAlignment="Center" Content="Add to cart" Click="add_tocart" />
+            <TextBlock Text="Please enter the id of the book to show" Margin="20" Foreground="White" HorizontalAlignment="Center"/>
+            <TextBox Name="shenasetoshow" HorizontalAlignment="Center" BorderThickness="0" Background="Transparent"/>
+            <Border Width="250" Height="2" Background="White" Opacity="0.5"/>
+            <Button x:Name="show" Width="100" Height="30" Margin="10" HorizontalAlignment="Center" Content="show" Click="showthebook" />
             <Button Content="Back" Click="backtodash" Width="50" Height="30"/>
         </StackPanel>
     </Grid>

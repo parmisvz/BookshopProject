@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\asus\Desktop\BookshopProject\AP01Project\obj\Debug\
+C:\Users\Lenovo\Desktop\parmisproject\BookshopProject\AP01Project\obj\Debug\
 AP01Project
 none
 false
 DEBUG;TRACE
-C:\Users\asus\Desktop\BookshopProject\AP01Project\App.xaml
-22-1781222586
+C:\Users\Lenovo\Desktop\parmisproject\BookshopProject\AP01Project\App.xaml
+28-1452000079
 
-32-1374084104
+39-1875420041
 151937372271
-AdminAddBook.xaml;AdminChoose.xaml;AdminDashboard.xaml;AdminEditBook.xaml;AdminSearchAndEditBooks.xaml;AdminSignIn.xaml;AdminSignUp.xaml;AdminUserSearch.xaml;bookslist.xaml;ButtonTheme.xaml;BuyBook.xaml;cart.xaml;ListBox.xaml;MainWindow.xaml;MVVM\View\ProfileViewer.xaml;Theme\MenuButtonTheme.xaml;Theme\TextBoxTheme.xaml;UserChoose.xaml;UserDashboard.xaml;userprofile.xaml;UserSignIn.xaml;UserSignUp.xaml;
+AdminAddBook.xaml;AdminChoose.xaml;AdminDashboard.xaml;AdminEditBook.xaml;AdminSearchAndEditBooks.xaml;AdminSignIn.xaml;AdminSignUp.xaml;AdminUserSearch.xaml;BookMark.xaml;bookslist.xaml;bought.xaml;ButtonTheme.xaml;BuyBook.xaml;buywithbalance.xaml;cart.xaml;increasemojodi.xaml;ListBox.xaml;MainWindow.xaml;MVVM\View\ProfileViewer.xaml;showboughtbook.xaml;showthebook.xaml;Theme\MenuButtonTheme.xaml;Theme\TextBoxTheme.xaml;UserChoose.xaml;UserDashboard.xaml;userprofile.xaml;UserSignIn.xaml;UserSignUp.xaml;
 
-False
+True
 
