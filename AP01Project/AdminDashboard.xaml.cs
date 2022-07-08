@@ -55,18 +55,6 @@ namespace AP01Project
             MessageBox.Show("Your information edited successfully.");
             Admin.Admins.Add(new Admin(username.Text, password.Text, name.Text, phone.Text));
         }
-
-        private void ViewUsers_Checked(object sender, RoutedEventArgs e)
-        {
-            AdminViewUsers adminViewUsers = new AdminViewUsers();
-        }
-
-        private void AddedBooks_Checked(object sender, RoutedEventArgs e)
-        {
-            AdminAddedBooks adminAddedBooks = new AdminAddedBooks();
-            adminAddedBooks.Show();
-        }
-
         private void AccountBalance_Checked(object sender, RoutedEventArgs e)
         {
 
@@ -74,7 +62,8 @@ namespace AP01Project
 
         private void SearchBookForm_Checked(object sender, RoutedEventArgs e)
         {
-
+            AdminSearchAndEditBooks adminSearchAndEditBooks=new AdminSearchAndEditBooks();
+            adminSearchAndEditBooks.Show();
         }
 
         private void SearchUserForm_Checked(object sender, RoutedEventArgs e)
@@ -85,8 +74,15 @@ namespace AP01Project
 
         private void AddBooks_Checked(object sender, RoutedEventArgs e)
         {
-            AdminAddedBooks adminAddedBooks = new AdminAddedBooks();
+            AdminAddBook adminAddedBooks = new AdminAddBook();
             adminAddedBooks.Show();
+        }
+
+        private void BackToLogin_Checked(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+            this.Close();
         }
     }
 }

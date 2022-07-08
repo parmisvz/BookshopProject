@@ -34,8 +34,6 @@
                 </DataGrid.Columns>
             </DataGrid>
 
-
-
             <Button x:Name="showbooks" Content="Show Books" Click="show_books"
                 Width="100" Margin="20,0,0,0" Height="30"/>
 

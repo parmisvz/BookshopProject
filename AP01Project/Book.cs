@@ -17,12 +17,14 @@ namespace AP01Project
         public int Price { get; set; }
         public bool VIP { get; set; }
         public int Rating { get; set; }
-        public Book(int id, string name, string author, int price)
+        public float Discount { get; set; }
+        public Book(int id, string name, string author, int price, float discount)
         {
             Id = id;
             Name = name;
             Author = author;
             Price = price;
+            Discount = discount;
         }
     }
 }

@@ -58,5 +58,12 @@ namespace AP01Project
             buyBook.Show();
             this.Close();
         }
+
+        private void exit_Checked(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+            this.Close();
+        }
     }
 }

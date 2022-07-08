@@ -68,7 +68,7 @@
                              Click="exit_Click" 
                              Height="50"
                              Style="{StaticResource MenuButtonTheme}"
-                             Foreground="black"/>
+                             Foreground="black" Checked="exit_Checked"/>
                    
                 </StackPanel>
                 <TextBox Width="250"

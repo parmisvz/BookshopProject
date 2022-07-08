@@ -125,8 +125,9 @@ namespace AP01Project
 
         public static List<User> Readfromsqltolist()
         {
-            string path = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Lenovo\Desktop\parmisproject\BookshopProject\AP01Project\data\UserInfo.mdf;Integrated Security=True;Connect Timeout=30";
-            SqlConnection sqlConnection = new SqlConnection(path);
+            string pathZahra = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Lenovo\Desktop\parmisproject\BookshopProject\AP01Project\data\UserInfo.mdf;Integrated Security=True;Connect Timeout=30";
+            string pathParmis = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\asus\Desktop\ProjectFile\AP01Project\data\UserInfo.mdf;Integrated Security=True;Connect Timeout=30";
+            SqlConnection sqlConnection = new SqlConnection(pathParmis);
             string Command = "select * from TUserInfo";
             SqlDataAdapter adapter = new SqlDataAdapter(Command, sqlConnection);
             DataTable dataT = new DataTable();
@@ -150,7 +151,7 @@ namespace AP01Project
             int j = 0;
             for (int i = 0; i < dataT.Rows.Count; i++)
             {
-                if (dataT.Rows[i][0] == username)
+                if (dataT.Rows[i][0].ToString() == username)
                 {
                     return false;
                 }

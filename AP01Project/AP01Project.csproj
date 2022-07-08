@@ -58,14 +58,17 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Admin.cs" />
-    <Compile Include="AdminAddedBooks.xaml.cs">
-      <DependentUpon>AdminAddedBooks.xaml</DependentUpon>
+    <Compile Include="AdminAddBook.xaml.cs">
+      <DependentUpon>AdminAddBook.xaml</DependentUpon>
     </Compile>
     <Compile Include="AdminDashboard.xaml.cs">
       <DependentUpon>AdminDashboard.xaml</DependentUpon>
     </Compile>
-    <Compile Include="AdminEditProfile.xaml.cs">
-      <DependentUpon>AdminEditProfile.xaml</DependentUpon>
+    <Compile Include="AdminEditBook.xaml.cs">
+      <DependentUpon>AdminEditBook.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AdminSearchAndEditBooks.xaml.cs">
+      <DependentUpon>AdminSearchAndEditBooks.xaml</DependentUpon>
     </Compile>
     <Compile Include="AdminSignIn.xaml.cs">
       <DependentUpon>AdminSignIn.xaml</DependentUpon>
@@ -75,9 +78,6 @@
     </Compile>
     <Compile Include="AdminUserSearch.xaml.cs">
       <DependentUpon>AdminUserSearch.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="AdminViewUsers.xaml.cs">
-      <DependentUpon>AdminViewUsers.xaml</DependentUpon>
     </Compile>
     <Compile Include="Book.cs" />
     <Compile Include="bookslist.xaml.cs">
@@ -112,7 +112,7 @@
     <Compile Include="UserSignUp.xaml.cs">
       <DependentUpon>UserSignUp.xaml</DependentUpon>
     </Compile>
-    <Page Include="AdminAddedBooks.xaml">
+    <Page Include="AdminAddBook.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -124,7 +124,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="AdminEditProfile.xaml">
+    <Page Include="AdminEditBook.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AdminSearchAndEditBooks.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -137,10 +141,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="AdminUserSearch.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="AdminViewUsers.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

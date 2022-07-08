@@ -1,0 +1,86 @@
+﻿<Window x:Class="AP01Project.AdminSearchAndEditBooks"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AP01Project"
+        mc:Ignorable="d"
+        Title="AdminSearchAndEditBooks" Height="450" Width="850" AllowsTransparency="True" Background="Transparent"
+        WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+
+    <Grid>
+        <Border CornerRadius="10" Grid.RowSpan="2">
+            <Border.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="#7be9f6" Offset="0.0"/>
+                    <GradientStop Color="#f083da" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+        </Border>
+        <StackPanel>
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <TextBlock  Text="Book Info" Foreground="White" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" 
+                       FontSize="28" Margin="10" FontFamily="Century Gothic">
+                </TextBlock>
+                <Image Source="/Images/white-removebg-preview.png" Width="60" Margin="5"/>
+
+            </StackPanel>
+
+            <DataGrid Name="dataGridBooks"
+                  Margin="20"
+                  AutoGenerateColumns="False"                  
+                  Height="185"
+                  CanUserResizeRows="False"
+                  AlternatingRowBackground="#CFCF"
+                  HorizontalAlignment="Center" Width="794">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Id" Width="100" Binding="{Binding Id}"/>
+                    <DataGridTextColumn Header="Name" Width="100" Binding="{Binding Name}"/>
+                    <DataGridTextColumn Header="Author" Width="100" Binding="{Binding Author}"/>
+                    <DataGridTextColumn Header="Price" Width="100" Binding="{Binding Price}"/>
+                    <DataGridTextColumn Header="Descripton" Width="100" Binding="{Binding Descripton}"/>
+                    <DataGridTextColumn Header="Rating" Width="100" Binding="{Binding Rating}"/>
+                    <DataGridTextColumn Header="Discount" Width="100" Binding="{Binding Discount}"/>
+                    <DataGridTextColumn Header="NoSoldItem" Width="100" Binding="{Binding NoSoldItem}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Button x:Name="ShowUsers" Content="Show All Books" 
+                Width="100" Height="30" Click="ShowUsers_Click"/>
+                <Button x:Name="ShowFilteredUsers" Content="Show Filtered Books"
+                Width="103" Height="30" Click="ShowFilteredUsers_Click" Margin="10 0 10 0"/>
+                <TextBox x:Name="SearchBoxUser"
+                     Width="200"
+                     Height="40"
+                     Background="Transparent"
+                     VerticalAlignment="Center"
+                     HorizontalAlignment="Center"
+                     Margin="5"
+                     Grid.Column="1"/>
+            </StackPanel>
+            <Border Width="350" Height="2" Background="White" Opacity="0.5" />
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button x:Name="Delete" Content="Delete"
+                Width="100" Height="30" Click="Delete_Click" Margin="10"/>
+                <Button x:Name="Edit" Content="Edit"
+                Width="100" Height="30" Click="Edit_Click" Margin="10 0 10 0"/>
+                <TextBox x:Name="TextBoxEdit"
+                     Width="200"
+                     Height="40"
+                     Text="Enter ID"
+                     Foreground="White"
+                     Background="Transparent"
+                     VerticalAlignment="Center"
+                     HorizontalAlignment="Center"
+                     Margin="5"
+                     Grid.Column="1"/>
+            </StackPanel>
+
+            <Border Width="350" Height="2" Background="White" Opacity="0.5" />
+
+            <Button Content="Back" Click="backtodash" Width="50" Height="30" Margin="20"/>
+        </StackPanel>
+    </Grid>
+</Window>

@@ -54,7 +54,7 @@ namespace AP01Project
             string name = data.Rows[x - 1][1].ToString();
             string author = data.Rows[x - 1][2].ToString();
             int price = int.Parse(data.Rows[x - 1][3].ToString());
-            Book book = new Book(index, name, author, price);
+            Book book = new Book(index, name, author, price , 0);
             obj.Library.Add(book);
             MessageBox.Show("The book added successfully to your cart.");
         }

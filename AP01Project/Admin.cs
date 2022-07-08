@@ -13,16 +13,13 @@ namespace AP01Project
         public string name { get; set; }
         public string phone_number { get; set; }
         public int AccountBalance { get; set; }
-
         public Admin(string user_name, string password, string name, string phone_number)
         {
             this.user_name = user_name;
             this.password = password;
             this.name = name;
             this.phone_number = phone_number;
-           // Admins.Add(this);
-
-            
+           // Admins.Add(this);           
         }
         public static  string Name(string user_name)
         {
@@ -100,8 +97,9 @@ namespace AP01Project
         }
         public static List<Admin> ReadFromSQLAddToList()
         {
-            string path = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Lenovo\Desktop\parmisproject\BookshopProject\AP01Project\data\AdminInfo.mdf;Integrated Security=True;Connect Timeout=30";
-            SqlConnection sqlConnection = new SqlConnection(path);
+            //string pathZahra = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Lenovo\Desktop\parmisproject\BookshopProject\AP01Project\data\AdminInfo.mdf;Integrated Security=True;Connect Timeout=30";
+            string pathParmis = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\asus\Desktop\ProjectFile\AP01Project\data\AdminInfo.mdf;Integrated Security=True;Connect Timeout=30";
+            SqlConnection sqlConnection = new SqlConnection(pathParmis);
             string Command = "select * from TAdminInfo";
             SqlDataAdapter adapter = new SqlDataAdapter(Command, sqlConnection);
             DataTable dataT = new DataTable();

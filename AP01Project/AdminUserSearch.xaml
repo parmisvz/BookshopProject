@@ -25,7 +25,7 @@
                 <Image Source="/Images/acount2-removebg-preview.png" Width="80"/>
             </StackPanel>
             
-            <DataGrid Name="dataGridbooks"
+            <DataGrid Name="dataGridUsers"
                   Margin="20"
                   AutoGenerateColumns="False"
                   
@@ -42,19 +42,20 @@
             </DataGrid>
 
 
-
-            <Button x:Name="showbooks" Content="Show Books" Click="show_books"
-                Width="100" Height="30"/>
-
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Button x:Name="ShowUsers" Content="Show All Users" 
+                Width="100" Height="30" Margin="0 0 20 0 " Click="ShowUsers_Click"/>
+                <Button x:Name="ShowFilteredUsers" Content="Show Filtered Users"
+                Width="100" Height="30" Click="ShowFilteredUsers_Click"/>
+            </StackPanel>
             <TextBox x:Name="SearchBoxUser"
                      Width="250"
-                     Text="Please enter User Name"
                      Height="40"
+                     Background="Transparent"
                      VerticalAlignment="Center"
                      HorizontalAlignment="Center"
                      Margin="5"
-                     Grid.Column="1"
-                     Style="{StaticResource ModernTextbox}" TextChanged="SearchBoxUser_TextChanged"/>
+                     Grid.Column="1"/>
 
             <Border Width="250" Height="2" Background="White" Opacity="0.5" />
 

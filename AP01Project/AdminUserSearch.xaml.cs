@@ -18,27 +18,32 @@ namespace AP01Project
         public AdminUserSearch()
         {
             InitializeComponent();
-        }
-        DataTable data = new DataTable();
-        string filterField = "UserName";
-        private void show_books(object sender, RoutedEventArgs e)
+        }        
+        public void SearchQuery(string value)
         {
-            string path= @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Lenovo\Desktop\parmisproject\BookshopProject\AP01Project\data\UserInfo.mdf;Integrated Security=True;Connect Timeout=30";
-            SqlConnection con=new SqlConnection(path);
+            //string pathZahra = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Lenovo\Desktop\parmisproject\BookshopProject\AP01Project\data\UserInfo.mdf;Integrated Security=True;Connect Timeout=30";
+            string pathParmis = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\asus\Desktop\ProjectFile\AP01Project\data\UserInfo.mdf;Integrated Security=True;Connect Timeout=30";
+            SqlConnection con = new SqlConnection(pathParmis);
             con.Open();
             string command;
-            command = "select * from TUserInfo";
+            command = "select * from TUserInfo Where user_name Like '%" + value + "%' or name Like '%" + value + "%'";
             SqlDataAdapter adapter = new SqlDataAdapter(command, con);
-            adapter.Fill(data);
-            dataGridbooks.ItemsSource = data.DefaultView;
+            DataTable data1 = new DataTable();
+            adapter.Fill(data1);            
+            dataGridUsers.ItemsSource = data1.DefaultView;
         }
         private void backtodash(object sender, RoutedEventArgs e)
         {
             this.Close();
+
         }
-        private void SearchBoxUser_TextChanged(object sender,TextChangedEventArgs e)
+        private void ShowFilteredUsers_Click(object sender, RoutedEventArgs e)
+        {            
+            SearchQuery(SearchBoxUser.Text);
+        }
+        private void ShowUsers_Click(object sender, RoutedEventArgs e)
         {
-            data.DefaultView.RowFilter = string.Format("[{0}] LIKE '%{1}%'", filterField, SearchBoxUser.Text);
+            SearchQuery("");
         }
     }
 }
