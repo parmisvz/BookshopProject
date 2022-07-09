@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace AP01Project
 {
@@ -38,7 +40,7 @@ namespace AP01Project
                 {
                     a = 1;
                 }
-                if (int.Parse(CVV2.Text)<10 || int.Parse(CVV2.Text)>=1000)
+                if (int.Parse(CVV2.Text) < 10 || int.Parse(CVV2.Text) >= 1000)
                 {
                     throw new Exception("Invalid cvv2");
                 }
@@ -46,13 +48,31 @@ namespace AP01Project
                 {
                     b = 1;
                 }
-                if (a==1 && b==1)
+                if (a == 1 && b == 1)
                 {
                     MessageBox.Show("Thanks for your shop.");
+                    int sum = 0;
+                    for (int i = 0; i < obj.Library.Count; i++)
+                    {
+                        sum += obj.Library[i].Price;
+                    }
+                    total.Text = sum.ToString();
+                    shop.mojodi += sum;
+                    obj.savedbooks = "";
+                    
                     for (int i = 0; i < obj.Library.Count; i++)
                     {
                         obj.bought.Add(obj.Library[i]);
-                        obj.savedbooks=obj.savedbooks+obj.Library[i].Id.ToString()+" ";
+                        if (obj.savedbooks == "")
+                        {
+
+
+                            obj.savedbooks += obj.Library[i].Id.ToString();
+                        }
+                        else
+                        {
+                            obj.savedbooks += "," + obj.Library[i].Id.ToString();
+                        }
                     }
                 }
             }
@@ -71,9 +91,9 @@ namespace AP01Project
         private void price(object sender, RoutedEventArgs e)
         {
             int sum = 0;
-            for(int i = 0; i < obj.Library.Count; i++)
+            for (int i = 0; i < obj.Library.Count; i++)
             {
-                sum+=obj.Library[i].Price;
+                sum += obj.Library[i].Price;
             }
             total.Text = sum.ToString();
         }

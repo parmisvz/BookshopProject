@@ -39,7 +39,7 @@
 
                 <Button Click="admin_signin" Width="100" Height="40" Content="Sign in"/>
                 <Button  Click="admin_signup" Width="100" Height="40" Content="Sign up" Margin="20"/>
-                <Button  Click="Back" Width="100" Height="40" Content="Back"/>
+                <Button Click="backadmin" Content="back" Width="100" Height="40" />
             </StackPanel>
         </Grid>
     </Grid>

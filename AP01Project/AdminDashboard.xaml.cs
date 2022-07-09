@@ -132,6 +132,13 @@ namespace AP01Project
             mainWindow.Show();
             this.Close();
         }
+
+        private void SHOWBOOK(object sender, RoutedEventArgs e)
+        {
+            SHOWBOOK showbook = new SHOWBOOK(obj);
+            showbook.Show();
+            this.Close();
+        }
     }
 }
 

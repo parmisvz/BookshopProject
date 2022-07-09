@@ -46,5 +46,12 @@ namespace AP01Project
             window2.Show();
             this.Close();
         }
+
+        private void backadmin(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+            this.Close();
+        }
     }
 }

@@ -54,7 +54,7 @@ namespace AP01Project
             string name = data.Rows[x - 1][1].ToString();
             string author = data.Rows[x - 1][2].ToString();
             int price = int.Parse(data.Rows[x - 1][3].ToString());
-            Book book = new Book(index, name, author, price , int.Parse(data.Rows[x - 1][8].ToString()));
+            Book book = new Book(index, name, author, price ,0);
             book.Image=data.Rows[x - 1][4].ToString();
             book.Pdf=data.Rows[x - 1][5].ToString();
             obj.Library.Add(book);

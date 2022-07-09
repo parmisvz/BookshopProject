@@ -45,20 +45,28 @@ namespace AP01Project
                 obj.password = username.Text;
                 obj.name = name.Text;
                 obj.phone_number = phone.Text;
-               
-                //SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Lenovo\Desktop\parmisproject\BookshopProject\AP01Project\data\UserInfo.mdf;Integrated Security=True;Connect Timeout=30");
-                //SqlDataAdapter adapter = new SqlDataAdapter();
-                //SqlCommand command = new SqlCommand();
-                //command.CommandText="UPDATE TUserInfo SET name = @command where user_name"
-                //adapter.UpdateCommand = command;
-                //adapter.UpdateCommand.Parameters.Add("@command",SqlDbType.NVarChar).Value
-                //string command;
-                //command = "UPDATE TUserInfo SET user_name='" + username.Text + "',name='" + name.Text + "',phone_number='" + phone.Text + "' WHERE password='" + obj.password + "'     ";
-                //SqlCommand com = new SqlCommand(command, con);
-                //com.BeginExecuteNonQuery();
-                //con.Close();
 
+                string ee = obj.user_name;
+                SqlConnection con=new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\Lenovo\Desktop\parmisproject\BookshopProject\AP01Project\data\UserInfo.mdf; Integrated Security = True; Connect Timeout = 30");
+                SqlDataAdapter vv = new SqlDataAdapter();
+                SqlCommand cmd = new SqlCommand();
+                cmd.CommandText = "DELETE FROM TUserInfo where user_name=@ee";
+                vv.DeleteCommand = cmd; 
+                vv.DeleteCommand.Parameters.Add("@ee",SqlDbType.NVarChar).Value=obj.user_name;
+                vv.DeleteCommand.Connection = con;
+                con.Open();
+                vv.DeleteCommand.ExecuteNonQuery();
+                con.Dispose();
+                con.Close();
 
+                SqlConnection con2 = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\Lenovo\Desktop\parmisproject\BookshopProject\AP01Project\data\UserInfo.mdf; Integrated Security = True; Connect Timeout = 30");
+                con2.Open();
+                string command2 = "INSERT INTO TUserInfo (user_name,password,name,phone_number,mojodi,bought) values('" + obj.user_name + "','" + obj.password + "','" + obj.name + "','" + obj.phone_number + "','" + obj.mojodi + "','" + obj.savedbooks + "')";
+                SqlDataAdapter adapter = new SqlDataAdapter();
+                adapter.InsertCommand = new SqlCommand(command2, con2);
+
+                adapter.InsertCommand.ExecuteNonQuery();
+                con2.Close();
                 MessageBox.Show("Your information edited successfully.");
             }
             catch (Exception ex)
@@ -66,6 +74,13 @@ namespace AP01Project
                 MessageBox.Show(ex.Message);
             }
 
+        }
+
+        private void back(object sender, RoutedEventArgs e)
+        {
+            UserDashboard userDashboard = new UserDashboard(obj);
+            userDashboard.Show();
+            this.Close();
         }
     }
 }

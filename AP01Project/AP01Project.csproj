@@ -107,7 +107,11 @@
     <Compile Include="MVVM\View\ProfileViewer.xaml.cs">
       <DependentUpon>ProfileViewer.xaml</DependentUpon>
     </Compile>
+    <Compile Include="shop.cs" />
     <Compile Include="ShoppingCart.cs" />
+    <Compile Include="SHOWBOOK.xaml.cs">
+      <DependentUpon>SHOWBOOK.xaml</DependentUpon>
+    </Compile>
     <Compile Include="showboughtbook.xaml.cs">
       <DependentUpon>showboughtbook.xaml</DependentUpon>
     </Compile>
@@ -216,6 +220,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="MVVM\View\ProfileViewer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SHOWBOOK.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

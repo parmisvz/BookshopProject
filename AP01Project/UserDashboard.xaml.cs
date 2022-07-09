@@ -26,44 +26,47 @@ namespace AP01Project
         {
             this.obj = obj;
             InitializeComponent();
-            //string pathZahra = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Lenovo\Desktop\parmisproject\BookshopProject\AP01Project\data\UserInfo.mdf;Integrated Security=True;Connect Timeout=30";
-            //// string pathParmis = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\asus\Desktop\ProjectFile\AP01Project\data\UserInfo.mdf;Integrated Security=True;Connect Timeout=30";
-            //SqlConnection sqlConnection = new SqlConnection(pathZahra);
-            //string Command = "select * from TUserInfo";
-            //SqlDataAdapter adapter = new SqlDataAdapter(Command, sqlConnection);
-            //DataTable dataT = new DataTable();
-            //adapter.Fill(dataT);
-            //int j = 0;
-            //string[] boughtbooks
-            //    ;
-            //for (int i = 0; i < dataT.Rows.Count; i++)
-            //{
-            //    if (dataT.Rows[i][0].ToString() == obj.user_name)
-            //    {
+            string pathZahra = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Lenovo\Desktop\parmisproject\BookshopProject\AP01Project\data\UserInfo.mdf;Integrated Security=True;Connect Timeout=30";
+            // string pathParmis = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\asus\Desktop\ProjectFile\AP01Project\data\UserInfo.mdf;Integrated Security=True;Connect Timeout=30";
+            SqlConnection sqlConnection = new SqlConnection(pathZahra);
+            string Command = "select * from TUserInfo where user_name='" + obj.user_name + "'";
+            SqlDataAdapter adapter = new SqlDataAdapter(Command, sqlConnection);
+            DataTable dataT = new DataTable();
+            adapter.Fill(dataT);
+            string pathzahra = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Lenovo\Desktop\AP\BookshopProject\AP01Project\data\BookInfo.mdf;Integrated Security=True;Connect Timeout=30";
+            //string pathParmis = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\asus\Desktop\ProjectFile\AP01Project\data\UserInfo.mdf;Integrated Security=True;Connect Timeout=30";
+            SqlConnection sqlConn = new SqlConnection(pathzahra);
+            string Comm = "select * from TBookInfo";
+            SqlDataAdapter adapt = new SqlDataAdapter(Comm, sqlConn);
+            DataTable data = new DataTable();
+            adapt.Fill(data);
 
-            //        boughtbooks = dataT.Rows[i][5].ToString().Split(' ');
-            //        j = boughtbooks.Length;
-            //        for (int x = 0; x < j; x++)
-            //        {
-            //            string pathzahra = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Lenovo\Desktop\AP\BookshopProject\AP01Project\data\BookInfo.mdf;Integrated Security=True;Connect Timeout=30";
-            //            // string pathParmis = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\asus\Desktop\ProjectFile\AP01Project\data\UserInfo.mdf;Integrated Security=True;Connect Timeout=30";
-            //            SqlConnection sqlConn = new SqlConnection(pathzahra);
-            //            string Comm = "select * from TBookInfo Where Id='" + boughtbooks[x] + "'";
-            //            SqlDataAdapter adapt = new SqlDataAdapter(Comm, sqlConn);
-            //            DataTable data = new DataTable();
-            //            adapt.Fill(data);
+            string[] boughtbooks;
+            boughtbooks = dataT.Rows[0][5].ToString().Split(',');
+            if (boughtbooks.Length > 0)
+            {
 
-            //            string s = data.Rows[int.Parse(boughtbooks[x])-1][0].ToString();
-            //            string name = data.Rows[int.Parse(boughtbooks[x])-1][1].ToString();
-            //            string author = data.Rows[int.Parse(boughtbooks[x])-1][2].ToString();
-            //            int price = int.Parse(data.Rows[int.Parse(boughtbooks[x])-1][3].ToString());
-            //            Book book = new Book(int.Parse(s), name, author, price, 0);
-            //            book.Image = data.Rows[int.Parse(boughtbooks[x])-1][4].ToString();
-            //            book.Pdf = data.Rows[int.Parse(boughtbooks[x])-1][5].ToString();
-            //            obj.Library.Add(book);
-            //        }
-            //    }
-            //}
+                for (int i = 0; i < boughtbooks.Length; i++)
+                {
+                    for (int j = 0; j < data.Rows.Count; j++)
+                    {
+                        if (data.Rows[j][0].ToString() == boughtbooks[i])
+                        {
+                            int a = int.Parse(data.Rows[j][0].ToString());
+                            string name = data.Rows[j][1].ToString();
+                            string author = data.Rows[j][2].ToString();
+                            int price = int.Parse(data.Rows[j][3].ToString());
+                            Book book = new Book(a, name, author, price, 0);
+                            book.Image = data.Rows[j][4].ToString();
+                            book.Pdf = data.Rows[j][5].ToString();
+                            //obj.Library.Add(book);
+                            obj.bought.Add(book);
+                        }
+                    }
+
+                }
+            }
+
 
         }
 

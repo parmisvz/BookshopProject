@@ -262,3 +262,5 @@ C:\Users\asus\Desktop\BookshopProject\AP01Project\obj\Debug\buywithbalance.baml
 C:\Users\asus\Desktop\BookshopProject\AP01Project\obj\Debug\increasemojodi.baml
 C:\Users\asus\Desktop\BookshopProject\AP01Project\obj\Debug\showboughtbook.baml
 C:\Users\asus\Desktop\BookshopProject\AP01Project\obj\Debug\showthebook.baml
+C:\Users\Lenovo\Desktop\parmisproject\BookshopProject\AP01Project\obj\Debug\SHOWBOOK.g.cs
+C:\Users\Lenovo\Desktop\parmisproject\BookshopProject\AP01Project\obj\Debug\SHOWBOOK.baml

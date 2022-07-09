@@ -8,6 +8,7 @@
         mc:Ignorable="d"        
         Title="AdminDashboard" WindowStyle="None" 
         ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
         Background="Transparent"
         AllowsTransparency="True"
         Height="500" Width="600">
@@ -52,7 +53,14 @@
                              Content="Account Balance"
                              Height="50"
                              Foreground="Black"
+
                              Style="{StaticResource MenuButtonTheme}" Checked="AccountBalance_Checked"/>
+                <RadioButton x:Name="showbook"
+                             Content="Show book"
+                             Height="50"
+                             Click="SHOWBOOK"
+                             Foreground="black"
+                             Style="{StaticResource MenuButtonTheme}"/>
                 <RadioButton x:Name="BackToLogin"
                              Content="Exit"
                              Height="50"

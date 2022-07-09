@@ -94,7 +94,8 @@
                
 
                 <Button  Click="show_userinfo" Width="90" Height="30" Content="Show info" Margin="60,10,60,0"/>
-                <Button Click="edit_userinfo" x:Name="edit_info" Width="90" Height="30" Content="Edit info" Margin="60,10,60,0"/>
+                <Button   Click="edit_userinfo" x:Name="edit_info" Width="90" Height="30" Content="Edit info" Margin="60,10,60,0"/>
+                <Button Content="Back" Click="back" Width="90" Height="30" Margin="60,10,60,0"/>
             </StackPanel>
 
         </Grid>
