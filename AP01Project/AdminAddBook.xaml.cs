@@ -52,8 +52,7 @@ namespace AP01Project
                     SqlConnection con = new SqlConnection(pathParmis);
                     con.Open();
                     string commandAdd;
-                    commandAdd = "INSERT INTO TBookInfo(Title,Address,Author,Price,Image,Rating,Description,Discount,NoSoldItem,PublishedDate) VALUES('" + title.Text + "','" + Address.Text + "','" + Author.Text + "','" + int.Parse(Price.Text) + "','" + Image.Text + "','" + rating + "','" + Description.Text+ "','" + int.Parse(Discount.Text) + "' ,'" + nSoldItem + "', '"+ PublishedDate.Text+ "')";
-                    SqlCommand sqlCommandAdd = new SqlCommand(commandAdd, con);
+                    commandAdd = "INSERT INTO TBookInfo(Title,Address,Author,Price,Image,Rating,Description,Discount,NoSoldItem,PublishedDate) VALUES('" + title.Text + "','" + Address.Text + "','" + Author.Text + "','" + int.Parse(Price.Text) + "','" + Image.Text + "','" + rating + "','" + Description.Text+ "','" + int.Parse(Discount.Text) + "' ,'" + nSoldItem + "', '"+ int.Parse(PublishedDate.Text)+ "')";
 
                     SqlDataAdapter adapter = new SqlDataAdapter();
                     adapter.InsertCommand = new SqlCommand(commandAdd, con);
@@ -68,11 +67,6 @@ namespace AP01Project
             {
                 MessageBox.Show(ex.Message);
             }
-        }
-
-        private void Description_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
         }
     }
 }

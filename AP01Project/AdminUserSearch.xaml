@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AP01Project"
         mc:Ignorable="d"
-        Title="AdminUserSearch" Height="450" Width="450" AllowsTransparency="True" Background="Transparent"
+        Title="AdminUserSearch" Height="450" Width="530" AllowsTransparency="True" Background="Transparent"
         WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid>
         <Border CornerRadius="10" Grid.RowSpan="2">
@@ -31,12 +31,13 @@
                   Height="180"
                   CanUserResizeRows="False"
                   AlternatingRowBackground="#CFCF"
-                  HorizontalAlignment="Center" Width="414">
+                  HorizontalAlignment="Center" Width="501">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="UserName" Width="100" Binding="{Binding user_name}"/>
                     <DataGridTextColumn Header="Name" Width="100" Binding="{Binding name}"/>
                     <DataGridTextColumn Header="PhoneNo" Width="100" Binding="{Binding phone_number}"/>
                     <DataGridTextColumn Header="Account Balance" Width="100" Binding="{Binding mojodi}"/>
+                    <DataGridTextColumn Header="Bought Book Id" Width="100" Binding="{Binding bought}"/>
                 </DataGrid.Columns>
             </DataGrid>
 

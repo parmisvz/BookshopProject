@@ -23,7 +23,6 @@ namespace AP01Project
     public partial class showthebook : Window
     {
         User obj;
-        List<Book> books;
         string x;
         public showthebook(User obj, string x)
         {

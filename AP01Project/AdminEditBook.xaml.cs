@@ -33,10 +33,19 @@ namespace AP01Project
             SqlConnection con = new SqlConnection(pathParmis);
             con.Open();
             string command;
-            command = "Select * from TBookInfo Where Id = '" + Id + "' ";
+            command = "Select * from TBookInfo";
             SqlDataAdapter adapter = new SqlDataAdapter(command, con);
             DataTable data = new DataTable();
             adapter.Fill(data);
+            int x = 0;
+            for(int i = 0; i < data.Rows.Count; i++)
+            {
+                if(int.Parse(data.Rows[i][0].ToString())==Id)
+                {
+                    x = i;
+                    break;
+                }
+            }
             string Title, author, address, price, image, description, discount;
             int nSoldItem, rating, DPublished;
             Title = title.Text;
@@ -45,48 +54,43 @@ namespace AP01Project
             price = Price.Text;
             image = Image.Text;
             DPublished = int.Parse(DatePublished.Text);
-            rating = int.Parse(data.Rows[0][6].ToString());
+            rating = int.Parse(data.Rows[x][6].ToString());
             description = Description.Text;
             discount = Discount.Text;
-            nSoldItem = int.Parse(data.Rows[0][9].ToString());          
+            nSoldItem = int.Parse(data.Rows[x][9].ToString()); 
 
             if (title.Text == "")
             {
-                Title = data.Rows[0][1].ToString();
+                Title = data.Rows[x][1].ToString();
             }
             if (Address.Text == "")
             {
-                address = data.Rows[0][2].ToString();
+                address = data.Rows[x][2].ToString();
             }
             if (Author.Text == "")
             {
-                author = data.Rows[0][3].ToString();
+                author = data.Rows[x][3].ToString();
             }
             if (Price.Text == "")
             {
-                price = data.Rows[0][4].ToString();
+                price = data.Rows[x][4].ToString();
             }
             if (Image.Text == "")
             {
-                image = data.Rows[0][5].ToString();
+                image = data.Rows[x][5].ToString();
             }
             if (Description.Text == "")
             {
-                description = data.Rows[0][7].ToString();
+                description = data.Rows[x][7].ToString();
             }
             if (Discount.Text == "")
             {
-                discount = data.Rows[0][8].ToString();
+                discount = data.Rows[x][8].ToString();
             }
             if (DatePublished.Text == "")
             {
                 DPublished = int.Parse(data.Rows[0][10].ToString());
             }
-
-            //string commandD;
-            //commandD = "Delete from TBookInfo Where Id = '" + Id + "' ";
-            //SqlCommand sqlCommand = new SqlCommand(commandD, con);
-            //sqlCommand.BeginExecuteNonQuery();
 
             //delete 
             int ee = Id;
@@ -102,16 +106,14 @@ namespace AP01Project
             sqlConnection.Dispose();
             sqlConnection.Close();
 
-
             //insert 
             SqlConnection sqlConnectionInsert = new SqlConnection(pathParmis);
             sqlConnectionInsert.Open();
-            string commandInsert = "INSERT INTO TBookInfo(Title,Address,Author,Price,Image,Rating,Description,Discount,NoSoldItms,PublishedDate) VALUES('" + Title + "','" + address + "','" + author + "','" + int.Parse(price) + "','" + image + "','" + rating + "','" + Description + "','" + int.Parse(discount) + "' ,'" + nSoldItem + "', '" + DPublished + "')";
+            string commandInsert = "INSERT INTO TBookInfo(Title,Address,Author,Price,Image,Rating,Description,Discount,NoSoldItem,PublishedDate) VALUES('" + Title + "','" + address + "','" + author + "','" + int.Parse(price) + "','" + image + "','" + rating + "','" + description + "','" + int.Parse(discount) + "' ,'" + nSoldItem + "', '" + DPublished + "')";
             SqlDataAdapter adapterInsert = new SqlDataAdapter();
             adapterInsert.InsertCommand = new SqlCommand(commandInsert, sqlConnectionInsert);
             adapterInsert.InsertCommand.ExecuteNonQuery();
             sqlConnectionInsert.Close();
-
 
 
             MessageBox.Show("Edited Sucessfuly");

@@ -35,10 +35,10 @@
                   HorizontalAlignment="Center" Width="867">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Id" Width="100" Binding="{Binding Id}"/>
-                    <DataGridTextColumn Header="Name" Width="100" Binding="{Binding Name}"/>
+                    <DataGridTextColumn Header="Title" Width="100" Binding="{Binding Title}"/>
                     <DataGridTextColumn Header="Author" Width="100" Binding="{Binding Author}"/>
                     <DataGridTextColumn Header="Price" Width="100" Binding="{Binding Price}"/>
-                    <DataGridTextColumn Header="Descripton" Width="100" Binding="{Binding Descripton}"/>
+                    <DataGridTextColumn Header="Description" Width="100" Binding="{Binding Description}"/>
                     <DataGridTextColumn Header="Rating" Width="100" Binding="{Binding Rating}"/>
                     <DataGridTextColumn Header="Discount" Width="100" Binding="{Binding Discount}"/>
                     <DataGridTextColumn Header="NoSoldItem" Width="100" Binding="{Binding NoSoldItem}"/>

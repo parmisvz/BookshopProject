@@ -26,12 +26,11 @@
                 Background="Transparent" 
                 BorderThickness="0"
                 VerticalAlignment="Center"
-                HorizontalAlignment="Center">
-                
-                
+                HorizontalAlignment="Center"
+                Width="200">
             </TextBox>
             <Border Width="250" Height="2" Background="White" Opacity="0.5"/>
-            <Button Width="100" Margin="20" Height="30" Content="show" Click="SHOW">
+            <Button Width="100" Margin="5" Height="30" Content="show" Click="SHOW">
                 
             </Button>
            
@@ -54,15 +53,12 @@
                         </StackPanel>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
-
-
-                <!--<Button Click="show_info" Content="hello">
-
-            </Button>-->
-
             </ListBox>
-
-            <Button Content="Back" Width="100 " Height="40" Click="back"/>
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Button Content="Back" Width="70 " Height="30" Click="back"/>
+                <Button Content="PDf" Width="70" Height="30" Click="pdf" Margin="10 0 0 0 "/>
+            </StackPanel>
+            
         </StackPanel>
     </Grid>
 </Window>

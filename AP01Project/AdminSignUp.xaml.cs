@@ -79,7 +79,7 @@ namespace AP01Project
                     AdminSignIn window2 = new AdminSignIn();
                     string pathParmis = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\asus\Desktop\ProjectFile\AP01Project\data\AdminInfo.mdf;Integrated Security=True;Connect Timeout=30";
                     string pathZahra = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Lenovo\Desktop\parmisproject\BookshopProject\AP01Project\data\AdminInfo.mdf;Integrated Security=True;Connect Timeout=30";
-                    SqlConnection SConnection = new SqlConnection(pathZahra);
+                    SqlConnection SConnection = new SqlConnection(pathParmis);
                     SConnection.Open();
                     string Command = "INSERT INTO TAdminInfo(AdminUserName,AdminName,AdminPassword,AdminPhoneNo) VALUES('" + username.Text.Trim() + "','" + name.Text.Trim() + "','" + password.Password.Trim() + "','" + phone.Text.Trim() + "')";
                    

@@ -78,7 +78,7 @@
                              HorizontalContentAlignment="Left"
                              Opacity="0.5"
                              Height="25"
-                             Margin="63,0,0,0" TextChanged="Description_TextChanged"/>
+                             Margin="63,0,0,0"/>
 
 
                 </StackPanel>

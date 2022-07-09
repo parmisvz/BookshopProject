@@ -52,10 +52,13 @@ namespace AP01Project
                 {
                     MessageBox.Show("Thanks for your shop.");
                     int sum = 0;
+                    int discount = 0;
                     for (int i = 0; i < obj.Library.Count; i++)
                     {
                         sum += obj.Library[i].Price;
+                        discount += obj.Library[i].Discount;
                     }
+                    sum = sum - Convert.ToInt32((sum * discount) / 100);
                     total.Text = sum.ToString();
                     shop.mojodi += sum;
                     obj.savedbooks = "";

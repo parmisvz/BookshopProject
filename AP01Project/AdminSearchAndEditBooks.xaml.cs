@@ -31,7 +31,7 @@ namespace AP01Project
             SqlConnection con = new SqlConnection(pathParmis);
             con.Open();
             string command;
-            command = "select * from TBookInfo Where Name Like '%" + value + "%' or Author Like '%" + value + "%'";
+            command = "select * from TBookInfo Where Title Like '%" + value + "%' or Author Like '%" + value + "%'";
             SqlDataAdapter adapter = new SqlDataAdapter(command, con);
             DataTable data = new DataTable();
             adapter.Fill(data);
@@ -88,9 +88,24 @@ namespace AP01Project
         }
         private void Edit_Click(object sender, RoutedEventArgs e)
         {
-            AdminEditBook adminEditBook=new AdminEditBook(int.Parse(TextBoxEdit.Text));
-            adminEditBook.Show();
-            this.Close();
+            try
+            {
+                if (TextBoxEdit.Text == null)
+                {
+                    throw new Exception("Id can not be null ot empty");
+                }
+                else
+                {
+                    AdminEditBook adminEditBook = new AdminEditBook(int.Parse(TextBoxEdit.Text));
+                    adminEditBook.Show();
+                    this.Close();
+                }               
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
         }
         private void backtodash(object sender, RoutedEventArgs e)
         {

@@ -58,8 +58,9 @@ namespace AP01Project
                 vv.DeleteCommand.ExecuteNonQuery();
                 con.Dispose();
                 con.Close();
-
-                SqlConnection con2 = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\Lenovo\Desktop\parmisproject\BookshopProject\AP01Project\data\UserInfo.mdf; Integrated Security = True; Connect Timeout = 30");
+                string pathZahra = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Lenovo\Desktop\AP\BookshopProject\AP01Project\data\BookInfo.mdf;Integrated Security=True;Connect Timeout=30";
+                //string pathParmis = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\asus\Desktop\ProjectFile\AP01Project\data\UserInfo.mdf;Integrated Security=True;Connect Timeout=30";                
+                SqlConnection con2 = new SqlConnection(pathZahra);
                 con2.Open();
                 string command2 = "INSERT INTO TUserInfo (user_name,password,name,phone_number,mojodi,bought) values('" + obj.user_name + "','" + obj.password + "','" + obj.name + "','" + obj.phone_number + "','" + obj.mojodi + "','" + obj.savedbooks + "')";
                 SqlDataAdapter adapter = new SqlDataAdapter();

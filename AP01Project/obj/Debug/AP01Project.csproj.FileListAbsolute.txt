@@ -166,8 +166,6 @@ C:\Users\asus\Desktop\BookshopProject\AP01Project\obj\Debug\AP01Project.csproj.G
 C:\Users\asus\Desktop\BookshopProject\AP01Project\obj\Debug\AP01Project.csproj.CoreCompileInputs.cache
 C:\Users\asus\Desktop\BookshopProject\AP01Project\obj\Debug\AP01Project.exe
 C:\Users\asus\Desktop\BookshopProject\AP01Project\obj\Debug\AP01Project.pdb
-C:\Users\asus\Desktop\BookshopProject\AP01Project\obj\Debug\ListBox.g.cs
-C:\Users\asus\Desktop\BookshopProject\AP01Project\obj\Debug\ListBox.baml
 C:\Users\Lenovo\Desktop\parmisproject\BookshopProject\AP01Project\bin\Debug\AP01Project.exe.config
 C:\Users\Lenovo\Desktop\parmisproject\BookshopProject\AP01Project\bin\Debug\AP01Project.exe
 C:\Users\Lenovo\Desktop\parmisproject\BookshopProject\AP01Project\bin\Debug\AP01Project.pdb
@@ -264,3 +262,5 @@ C:\Users\asus\Desktop\BookshopProject\AP01Project\obj\Debug\showboughtbook.baml
 C:\Users\asus\Desktop\BookshopProject\AP01Project\obj\Debug\showthebook.baml
 C:\Users\Lenovo\Desktop\parmisproject\BookshopProject\AP01Project\obj\Debug\SHOWBOOK.g.cs
 C:\Users\Lenovo\Desktop\parmisproject\BookshopProject\AP01Project\obj\Debug\SHOWBOOK.baml
+C:\Users\asus\Desktop\BookshopProject\AP01Project\obj\Debug\SHOWBOOK.g.cs
+C:\Users\asus\Desktop\BookshopProject\AP01Project\obj\Debug\SHOWBOOK.baml

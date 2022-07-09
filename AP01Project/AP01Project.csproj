@@ -101,9 +101,6 @@
     <Compile Include="increasemojodi.xaml.cs">
       <DependentUpon>increasemojodi.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ListBox.xaml.cs">
-      <DependentUpon>ListBox.xaml</DependentUpon>
-    </Compile>
     <Compile Include="MVVM\View\ProfileViewer.xaml.cs">
       <DependentUpon>ProfileViewer.xaml</DependentUpon>
     </Compile>
@@ -195,10 +192,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="increasemojodi.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="ListBox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
