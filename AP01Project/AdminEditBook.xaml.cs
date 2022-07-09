@@ -38,16 +38,17 @@ namespace AP01Project
             DataTable data = new DataTable();
             adapter.Fill(data);
             string Title, author, address, price, image, description, discount;
-            int nSoldItem, rating;
+            int nSoldItem, rating, DPublished;
             Title = title.Text;
             address = Address.Text;
             author = Author.Text;
             price = Price.Text;
             image = Image.Text;
+            DPublished = int.Parse(DatePublished.Text);
             rating = int.Parse(data.Rows[0][6].ToString());
             description = Description.Text;
             discount = Discount.Text;
-            nSoldItem = int.Parse(data.Rows[0][9].ToString());
+            nSoldItem = int.Parse(data.Rows[0][9].ToString());          
 
             if (title.Text == "")
             {
@@ -65,27 +66,53 @@ namespace AP01Project
             {
                 price = data.Rows[0][4].ToString();
             }
-            if (Image.Text=="")
+            if (Image.Text == "")
             {
-                image=data.Rows[0][5].ToString();
+                image = data.Rows[0][5].ToString();
             }
-            if (Description.Text=="")
+            if (Description.Text == "")
             {
-                description=data.Rows[0][7].ToString();
+                description = data.Rows[0][7].ToString();
             }
             if (Discount.Text == "")
             {
                 discount = data.Rows[0][8].ToString();
             }
-            string commandD;
-            commandD = "Delete from TBookInfo Where Id = '" + Id + "' ";
-            SqlCommand sqlCommand = new SqlCommand(command, con);
-            sqlCommand.BeginExecuteNonQuery();
+            if (DatePublished.Text == "")
+            {
+                DPublished = int.Parse(data.Rows[0][10].ToString());
+            }
 
-            string commandAdd;
-            commandAdd = "INSERT INTO TBookInfo(Title,Address,Author,Price,Image,Rating,Description,Discount,NoSoldItms) VALUES('" + Title + "','" + address +"','" + author +"','" + int.Parse(price) +"','" + image +"','" + rating +"','" + Description +"','" + int.Parse(discount) +"' ,'" + nSoldItem +"')";
-            SqlCommand sqlCommandAdd = new SqlCommand(command, con);
-            sqlCommandAdd.BeginExecuteNonQuery();
+            //string commandD;
+            //commandD = "Delete from TBookInfo Where Id = '" + Id + "' ";
+            //SqlCommand sqlCommand = new SqlCommand(commandD, con);
+            //sqlCommand.BeginExecuteNonQuery();
+
+            //delete 
+            int ee = Id;
+            SqlConnection sqlConnection = new SqlConnection(pathParmis);
+            SqlCommand a = new SqlCommand();
+            a.CommandText = "Delete from TBookInfo Where Id = @ee";
+            SqlDataAdapter vv = new SqlDataAdapter();
+            vv.DeleteCommand = a;
+            vv.DeleteCommand.Parameters.Add("@ee", SqlDbType.Int).Value = Id;
+            vv.DeleteCommand.Connection = sqlConnection;
+            sqlConnection.Open();
+            vv.DeleteCommand.ExecuteNonQuery();
+            sqlConnection.Dispose();
+            sqlConnection.Close();
+
+
+            //insert 
+            SqlConnection sqlConnectionInsert = new SqlConnection(pathParmis);
+            sqlConnectionInsert.Open();
+            string commandInsert = "INSERT INTO TBookInfo(Title,Address,Author,Price,Image,Rating,Description,Discount,NoSoldItms,PublishedDate) VALUES('" + Title + "','" + address + "','" + author + "','" + int.Parse(price) + "','" + image + "','" + rating + "','" + Description + "','" + int.Parse(discount) + "' ,'" + nSoldItem + "', '" + DPublished + "')";
+            SqlDataAdapter adapterInsert = new SqlDataAdapter();
+            adapterInsert.InsertCommand = new SqlCommand(commandInsert, sqlConnectionInsert);
+            adapterInsert.InsertCommand.ExecuteNonQuery();
+            sqlConnectionInsert.Close();
+
+
 
             MessageBox.Show("Edited Sucessfuly");
             this.Close();

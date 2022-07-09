@@ -20,9 +20,9 @@
         <StackPanel>
             <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
                 <TextBlock  Text="Edit" Foreground="White" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" 
-                       FontSize="28" Margin="10" FontFamily="Century Gothic">
+                       FontSize="26" Margin="10" FontFamily="Century Gothic">
                 </TextBlock>
-                <Image Source="/Images/white-removebg-preview.png" Width="80" Margin="5"/>
+                <Image Source="/Images/white-removebg-preview.png" Width="60" Margin="5"/>
 
             </StackPanel>
             <StackPanel Grid.Row="1">
@@ -156,8 +156,27 @@
 
                 </StackPanel>
                 <Border Width="250" Height="2" Background="White" Opacity="0.5"/>
+                <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                    <TextBox 
+                        Name="DatePublished" FontFamily="Century Gothic"
+                             FontWeight="Light"
+                             Text="Date Published"
+                             FontSize="20"
+                             HorizontalAlignment="Center"
+                             Foreground="White"
+                             Background="Transparent"
+                             BorderThickness="0"
+                             Width="235"
+                             HorizontalContentAlignment="Left"
+                             Opacity="0.5"
+                             Height="25"
+                             Margin="63,0,0,0"/>
+
+                </StackPanel>
+                <Border Width="250" Height="2" Background="White" Opacity="0.5"/>
+
                 <Button x:Name="Edit" Content="Edit"
-                Width="100" Height="30" Click="Edit_Click" Margin="10 20 10 0"/>
+                Width="100" Height="30" Click="Edit_Click" Margin="5" />
             </StackPanel>
         </StackPanel>
     </Grid>

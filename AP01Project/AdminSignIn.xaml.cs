@@ -38,7 +38,7 @@ namespace AP01Project
                 if (Admin.checkadmin(user_name.Text, password.Password))
                 {
                     string name = Admin.Name(user_name.Text);
-                    string phone = User.Phone_number(user_name.Text);
+                    string phone = Admin.Phone_number(user_name.Text);
                     Admin person = new Admin(user_name.Text, password.Password, name, phone);
                     AdminDashboard userdashboard = new AdminDashboard(person);
                     userdashboard.Show();

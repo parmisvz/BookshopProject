@@ -250,3 +250,15 @@ C:\Users\Lenovo\Desktop\parmisproject\BookshopProject\AP01Project\obj\Debug\buyw
 C:\Users\Lenovo\Desktop\parmisproject\BookshopProject\AP01Project\obj\Debug\buywithbalance.baml
 C:\Users\Lenovo\Desktop\parmisproject\BookshopProject\AP01Project\obj\Debug\BookMark.g.cs
 C:\Users\Lenovo\Desktop\parmisproject\BookshopProject\AP01Project\obj\Debug\BookMark.baml
+C:\Users\asus\Desktop\BookshopProject\AP01Project\obj\Debug\BookMark.g.cs
+C:\Users\asus\Desktop\BookshopProject\AP01Project\obj\Debug\bought.g.cs
+C:\Users\asus\Desktop\BookshopProject\AP01Project\obj\Debug\buywithbalance.g.cs
+C:\Users\asus\Desktop\BookshopProject\AP01Project\obj\Debug\increasemojodi.g.cs
+C:\Users\asus\Desktop\BookshopProject\AP01Project\obj\Debug\showboughtbook.g.cs
+C:\Users\asus\Desktop\BookshopProject\AP01Project\obj\Debug\showthebook.g.cs
+C:\Users\asus\Desktop\BookshopProject\AP01Project\obj\Debug\BookMark.baml
+C:\Users\asus\Desktop\BookshopProject\AP01Project\obj\Debug\bought.baml
+C:\Users\asus\Desktop\BookshopProject\AP01Project\obj\Debug\buywithbalance.baml
+C:\Users\asus\Desktop\BookshopProject\AP01Project\obj\Debug\increasemojodi.baml
+C:\Users\asus\Desktop\BookshopProject\AP01Project\obj\Debug\showboughtbook.baml
+C:\Users\asus\Desktop\BookshopProject\AP01Project\obj\Debug\showthebook.baml

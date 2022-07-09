@@ -12,16 +12,9 @@
         <Grid>
 
             <Grid.RowDefinitions>
-                <RowDefinition>
-
-
-                </RowDefinition>
-                <RowDefinition>
-
-                </RowDefinition>
+                <RowDefinition/>
+                <RowDefinition/>
             </Grid.RowDefinitions>
-
-
 
             <Border CornerRadius="10" Grid.RowSpan="2">
                 <Border.Background>
@@ -32,23 +25,21 @@
                 </Border.Background>
             </Border>
 
-
-
             <StackPanel>
                 <TextBlock  Text="welcome" Foreground="White" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" 
                        FontSize="40" Margin="10" FontFamily="Century Gothic">
                 </TextBlock>
                 <TextBlock FontFamily="Century Gothic" Text="Dear Admin!" Foreground="white" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="center"
                            FontSize="15">
-
                 </TextBlock>
                 <Image Source="/Images/white-removebg-preview.png" Width="120"/>
             </StackPanel>
 
-            <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0,50,0,0" >
+            <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,50,0,0" >
 
-                <Button Click="admin_signin" Width="100" Height="40" Content="Sign in" Margin="60,0,60,0"/>
-                <Button  Click="admin_signup" Width="100" Height="40" Content="Sign up"/>
+                <Button Click="admin_signin" Width="100" Height="40" Content="Sign in"/>
+                <Button  Click="admin_signup" Width="100" Height="40" Content="Sign up" Margin="20"/>
+                <Button  Click="Back" Width="100" Height="40" Content="Back"/>
             </StackPanel>
         </Grid>
     </Grid>

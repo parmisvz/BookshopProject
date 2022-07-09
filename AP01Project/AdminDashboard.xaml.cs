@@ -14,6 +14,8 @@ using System.Windows.Shapes;
 using System.Data;
 using System.Data.SqlClient;
 using System.IO;
+using System.Text.RegularExpressions;
+
 
 namespace AP01Project
 {
@@ -48,12 +50,58 @@ namespace AP01Project
         }
         private void Edit(object sender, RoutedEventArgs e)
         {
-            Admin.Admins.Remove(obj);
-            obj.name = name.Text;
-            obj.phone_number = phone.Text;
-            obj.password = password.Text;
-            MessageBox.Show("Your information edited successfully.");
-            Admin.Admins.Add(new Admin(username.Text, password.Text, name.Text, phone.Text));
+            try
+            {
+                if (!Regex.IsMatch(password.Text, @"^(?=.*?[A-Z])(?=.*?[a-z]).{8,40}"))
+                {
+                    throw new Exception("Password is not valid");
+                }
+                if (!Regex.IsMatch(phone.Text, @"^[09][0-9]{9}"))
+                {
+                    throw new Exception("Your phone number is not valid.");
+                }
+                if (name.Text.Length < 3 || name.Text.Length > 32 || !Regex.IsMatch(name.Text, @"[a-zA-Z]"))
+                {
+                    throw new Exception("name is not valid.");
+                }
+                else
+                {
+                    obj.name = name.Text;
+                    obj.phone_number = phone.Text;
+                    obj.password = password.Text;
+                    //delete 
+                    string ee = obj.user_name;
+                    string pathParmis = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\asus\Desktop\ProjectFile\AP01Project\data\AdminInfo.mdf;Integrated Security=True;Connect Timeout=30";
+                    SqlConnection sqlConnection = new SqlConnection(pathParmis);                   
+                    SqlCommand a = new SqlCommand();
+                    a.CommandText = "Delete from TAdminInfo Where AdminUserName = @ee";
+                    SqlDataAdapter vv =new SqlDataAdapter();
+                    vv.DeleteCommand = a;
+                    vv.DeleteCommand.Parameters.Add("@ee", SqlDbType.NVarChar).Value = obj.user_name;
+                    vv.DeleteCommand.Connection = sqlConnection;
+                    sqlConnection.Open();
+                    vv.DeleteCommand.ExecuteNonQuery();
+                    sqlConnection.Dispose();
+                    sqlConnection.Close();
+
+                    //insert 
+                    SqlConnection sqlConnectionInsert = new SqlConnection(pathParmis);
+                    sqlConnectionInsert.Open();
+                    string commandInsert = "Insert Into TAdminInfo(AdminUserName,AdminName,AdminPassword,AdminPhoneNo) Values('" + obj.user_name + "','" + name.Text + "','" + password.Text + "','" + phone.Text + "')";
+                    SqlDataAdapter adapter = new SqlDataAdapter();
+                    adapter.InsertCommand = new SqlCommand(commandInsert, sqlConnectionInsert);
+                    adapter.InsertCommand.ExecuteNonQuery();
+                    sqlConnectionInsert.Close();
+
+
+
+                    MessageBox.Show("Your information edited successfully.");                    
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
         private void AccountBalance_Checked(object sender, RoutedEventArgs e)
         {

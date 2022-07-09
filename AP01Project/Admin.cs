@@ -46,26 +46,15 @@ namespace AP01Project
         }
         public static string Phone_number(string user_name)
         {
-            int j = 0;
             for (int i = 0; i < Admins.Count; i++)
             {
                 if (Admins[i].user_name == user_name)
                 {
-                    return Admins[i].phone_number;
-                }
-                else
-                {
-                    j++;
+                    string x = Admins[i].phone_number;
+                    return x;
                 }
             }
-            if (j == Admins.Count)
-            {
-                return "";
-            }
-            else
-            {
-                return "";
-            }
+            return null;
         }
         public static bool check_username(string user_name)
         {
@@ -99,7 +88,7 @@ namespace AP01Project
         {
             string pathZahra = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Lenovo\Desktop\parmisproject\BookshopProject\AP01Project\data\AdminInfo.mdf;Integrated Security=True;Connect Timeout=30";
             string pathParmis = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\asus\Desktop\ProjectFile\AP01Project\data\AdminInfo.mdf;Integrated Security=True;Connect Timeout=30";
-            SqlConnection sqlConnection = new SqlConnection(pathZahra);
+            SqlConnection sqlConnection = new SqlConnection(pathParmis);
             string Command = "select * from TAdminInfo";
             SqlDataAdapter adapter = new SqlDataAdapter(Command, sqlConnection);
             DataTable dataT = new DataTable();

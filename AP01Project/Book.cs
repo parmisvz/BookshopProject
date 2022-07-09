@@ -19,8 +19,10 @@ namespace AP01Project
         public bool bookmark { get; set; }
         public bool VIP { get; set; }
         public int Rating { get; set; }
-        public float Discount { get; set; }
-        public Book(int id, string name, string author, int price, float discount)
+        public int Discount { get; set; }
+        public int NSoldItem { get; set; } = 0;
+
+        public Book(int id, string name, string author, int price, int discount)
         {
             Id = id;
             Name = name;

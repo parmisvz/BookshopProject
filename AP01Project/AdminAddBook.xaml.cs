@@ -29,28 +29,50 @@ namespace AP01Project
         {
             try
             {
-                string Title, author, address, price, image, description, discount;
-                int nSoldItem, rating;
-                Title = title.Text;
-                address = Address.Text;
-                author = Author.Text;
-                price = Price.Text;
-                image = Image.Text;
-                rating =0;
-                description = Description.Text;
-                discount = Discount.Text;
-                nSoldItem = 0;
-                string pathParmis = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\asus\Desktop\ProjectFile\AP01Project\data\BookInfo.mdf;Integrated Security=True;Connect Timeout=30";
-                SqlConnection con = new SqlConnection(pathParmis);
-                string commandAdd;
-                commandAdd = "INSERT INTO TBookInfo(Title,Address,Author,Price,Image,Rating,Description,Discount,NoSoldItms) VALUES('" + Title + "','" + address + "','" + author + "','" + int.Parse(price) + "','" + image + "','" + rating + "','" + Description + "','" + int.Parse(discount) + "' ,'" + nSoldItem + "')";
-                SqlCommand sqlCommandAdd = new SqlCommand(commandAdd, con);
-                sqlCommandAdd.BeginExecuteNonQuery();
+                if (title.Text == "" || Address.Text == "" || Author.Text == "" || Image.Text == "" || Discount.Text == "")
+                {
+                    throw new Exception("Please fill all the fields");
+                }
+                if (int.Parse(Discount.Text) < 0)
+                {
+                    throw new Exception("Discount can not be negative");
+                }
+                if (int.Parse(Price.Text) < 0)
+                {
+                    throw new Exception("Price can not be negative");
+                }
+                if (int.Parse(PublishedDate.Text) < 0)
+                {
+                    throw new Exception("Published Date can not be negative");
+                }
+                else
+                {
+                    int nSoldItem = 0, rating = 0;
+                    string pathParmis = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\asus\Desktop\ProjectFile\AP01Project\data\BookInfo.mdf;Integrated Security=True;Connect Timeout=30";
+                    SqlConnection con = new SqlConnection(pathParmis);
+                    con.Open();
+                    string commandAdd;
+                    commandAdd = "INSERT INTO TBookInfo(Title,Address,Author,Price,Image,Rating,Description,Discount,NoSoldItem,PublishedDate) VALUES('" + title.Text + "','" + Address.Text + "','" + Author.Text + "','" + int.Parse(Price.Text) + "','" + Image.Text + "','" + rating + "','" + Description.Text+ "','" + int.Parse(Discount.Text) + "' ,'" + nSoldItem + "', '"+ PublishedDate.Text+ "')";
+                    SqlCommand sqlCommandAdd = new SqlCommand(commandAdd, con);
+
+                    SqlDataAdapter adapter = new SqlDataAdapter();
+                    adapter.InsertCommand = new SqlCommand(commandAdd, con);
+                    adapter.InsertCommand.ExecuteNonQuery();
+
+                    con.Close();
+                    MessageBox.Show("Added Successfuly");
+                    this.Close();
+                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void Description_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }

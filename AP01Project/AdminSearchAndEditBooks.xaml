@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AP01Project"
         mc:Ignorable="d"
-        Title="AdminSearchAndEditBooks" Height="450" Width="850" AllowsTransparency="True" Background="Transparent"
+        Title="AdminSearchAndEditBooks" Height="450" Width="900" AllowsTransparency="True" Background="Transparent"
         WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
 
     <Grid>
@@ -32,7 +32,7 @@
                   Height="185"
                   CanUserResizeRows="False"
                   AlternatingRowBackground="#CFCF"
-                  HorizontalAlignment="Center" Width="794">
+                  HorizontalAlignment="Center" Width="867">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Id" Width="100" Binding="{Binding Id}"/>
                     <DataGridTextColumn Header="Name" Width="100" Binding="{Binding Name}"/>
@@ -42,6 +42,7 @@
                     <DataGridTextColumn Header="Rating" Width="100" Binding="{Binding Rating}"/>
                     <DataGridTextColumn Header="Discount" Width="100" Binding="{Binding Discount}"/>
                     <DataGridTextColumn Header="NoSoldItem" Width="100" Binding="{Binding NoSoldItem}"/>
+                    <DataGridTextColumn Header="Date" Width="100" Binding="{Binding PublishedDate}"/>
                 </DataGrid.Columns>
             </DataGrid>
 
