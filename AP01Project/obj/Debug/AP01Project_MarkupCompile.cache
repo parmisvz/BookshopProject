@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Lenovo\Desktop\parmisproject\BookshopProject\AP01Project\obj\Debug\
+C:\Users\asus\Desktop\BookshopProject\AP01Project\obj\Debug\
 AP01Project
 none
 false
 DEBUG;TRACE
-C:\Users\Lenovo\Desktop\parmisproject\BookshopProject\AP01Project\App.xaml
+C:\Users\asus\Desktop\BookshopProject\AP01Project\App.xaml
 291196840799
 
-40-1270229155
+41942649523
 151937372271
 AdminAddBook.xaml;AdminChoose.xaml;AdminDashboard.xaml;AdminEditBook.xaml;AdminSearchAndEditBooks.xaml;AdminSignIn.xaml;AdminSignUp.xaml;AdminUserSearch.xaml;BookMark.xaml;bookslist.xaml;bought.xaml;ButtonTheme.xaml;BuyBook.xaml;buywithbalance.xaml;cart.xaml;increasemojodi.xaml;ListBox.xaml;MainWindow.xaml;MVVM\View\ProfileViewer.xaml;SHOWBOOK.xaml;showboughtbook.xaml;showthebook.xaml;Theme\MenuButtonTheme.xaml;Theme\TextBoxTheme.xaml;UserChoose.xaml;UserDashboard.xaml;userprofile.xaml;UserSignIn.xaml;UserSignUp.xaml;
 
-False
+True
 

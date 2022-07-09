@@ -7,7 +7,6 @@
         mc:Ignorable="d"
         Title="AdminUserSearch" Height="450" Width="450" AllowsTransparency="True" Background="Transparent"
         WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
-
     <Grid>
         <Border CornerRadius="10" Grid.RowSpan="2">
             <Border.Background>

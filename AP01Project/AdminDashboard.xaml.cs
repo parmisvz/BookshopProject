@@ -105,7 +105,7 @@ namespace AP01Project
         }
         private void AccountBalance_Checked(object sender, RoutedEventArgs e)
         {
-
+            MessageBox.Show("Account Balance:{0}", shop.mojodi.ToString());
         }
 
         private void SearchBookForm_Checked(object sender, RoutedEventArgs e)
