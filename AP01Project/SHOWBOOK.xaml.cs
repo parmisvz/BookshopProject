@@ -45,9 +45,9 @@ namespace AP01Project
         }
         private void SHOW(object sender, RoutedEventArgs e)
         {
-            //string pathZahra = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Lenovo\Desktop\AP\BookshopProject\AP01Project\data\BookInfo.mdf;Integrated Security=True;Connect Timeout=30";
+            string pathZahra = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Lenovo\Desktop\erare\BookshopProject\AP01Project\data\BookInfo.mdf;Integrated Security=True;Connect Timeout=30";
             string pathParmis = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\asus\Desktop\ProjectFile\AP01Project\data\BookInfo.mdf;Integrated Security=True;Connect Timeout=30";
-            SqlConnection sqlConnection = new SqlConnection(pathParmis);
+            SqlConnection sqlConnection = new SqlConnection(pathZahra);
             string Command = "select * from TBookInfo";
             SqlDataAdapter adapter = new SqlDataAdapter(Command, sqlConnection);
             DataTable dataT = new DataTable();
@@ -58,7 +58,7 @@ namespace AP01Project
                 if (int.Parse(dataT.Rows[i][0].ToString()) == int.Parse(search.Text.ToString()))
                 {
 
-                    Book y = new Book(int.Parse(dataT.Rows[i][0].ToString()), dataT.Rows[i][1].ToString(), dataT.Rows[i][2].ToString(), int.Parse(dataT.Rows[i][4].ToString()), int.Parse(dataT.Rows[i][8].ToString()));
+                    Book y = new Book(int.Parse(dataT.Rows[i][0].ToString()), dataT.Rows[i][1].ToString(), dataT.Rows[i][3].ToString(), int.Parse(dataT.Rows[i][4].ToString()), int.Parse(dataT.Rows[i][8].ToString()));
                     y.Image = dataT.Rows[i][5].ToString();
                     pdfAddress= dataT.Rows[i][2].ToString();
                     list.Add(y);

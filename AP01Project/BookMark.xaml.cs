@@ -18,7 +18,7 @@ namespace AP01Project
     /// <summary>
     /// Interaction logic for BookMark.xaml
     /// </summary>
-    public partial class  BookMark : Window
+    public partial class BookMark : Window
     {
         User obj;
         public BookMark(User obj)
@@ -55,27 +55,47 @@ namespace AP01Project
 
 
 
-            string pathZahra = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Lenovo\Desktop\AP\BookshopProject\AP01Project\data\BookInfo.mdf;Integrated Security=True;Connect Timeout=30";
+            string pathZahra = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Lenovo\Desktop\erare\BookshopProject\AP01Project\data\BookInfo.mdf;Integrated Security=True;Connect Timeout=30";
             // string pathParmis = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\asus\Desktop\ProjectFile\AP01Project\data\UserInfo.mdf;Integrated Security=True;Connect Timeout=30";
             SqlConnection sqlConnection = new SqlConnection(pathZahra);
             string Command = "select * from TBookInfo";
             SqlDataAdapter adapter = new SqlDataAdapter(Command, sqlConnection);
             DataTable dataT = new DataTable();
             adapter.Fill(dataT);
-            for(int i = 0;i < dataT.Rows.Count; i++)
+            for (int i = 0; i < dataT.Rows.Count; i++)
             {
-                if(dataT.Rows[i][0].ToString() == shenase.Text.ToString())
+                if (dataT.Rows[i][0].ToString() == shenase.Text.ToString())
                 {
-                    int x=int.Parse(dataT.Rows[i][0].ToString());
-                    string name=dataT.Rows[i][1].ToString();
-                    string author=dataT.Rows[i][2].ToString();
-                    int price=int.Parse(dataT.Rows[i][3].ToString());
+                    int x = int.Parse(dataT.Rows[i][0].ToString());
+                    string name = dataT.Rows[i][1].ToString();
+                    string author = dataT.Rows[i][3].ToString();
+                    int price = int.Parse(dataT.Rows[i][4].ToString());
                     Book book = new Book(x, name, author, price, 0);
                     obj.bookmark.Add(book);
-                    cart2.ItemsSource=obj.bookmark;
-                    cart2.Items.Refresh();
+                    
                 }
             }
+            //cart2.ItemsSource = obj.bookmark;
+            cart2.Items.Refresh();
+        }
+
+        private void show(object sender, RoutedEventArgs e)
+        {
+            for(int i = 0; i <obj. bookmark.Count; i++)
+            {
+                for (int j = i + 1; j < obj.bookmark.Count; j++)
+                {
+
+
+                    if (obj.bookmark[i].Id == obj.bookmark[j].Id)
+                    {
+                        obj.bookmark.RemoveAt(i);
+                        obj.bookmark.RemoveAt(j);
+                    }
+                }
+            }
+            cart2.ItemsSource = obj.bookmark;
+            cart2.Items.Refresh();
         }
     }
 }

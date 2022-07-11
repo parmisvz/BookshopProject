@@ -58,24 +58,15 @@ namespace AP01Project
                         sum += obj.Library[i].Price;
                         discount += obj.Library[i].Discount;
                     }
-                    sum = sum - Convert.ToInt32((sum * discount) / 100);
+                    sum = sum - (sum * discount / 100);
                     total.Text = sum.ToString();
                     shop.mojodi += sum;
-                    obj.savedbooks = "";
+                    //obj.savedbooks = "";
                     
                     for (int i = 0; i < obj.Library.Count; i++)
                     {
                         obj.bought.Add(obj.Library[i]);
-                        if (obj.savedbooks == "")
-                        {
-
-
-                            obj.savedbooks += obj.Library[i].Id.ToString();
-                        }
-                        else
-                        {
-                            obj.savedbooks += "," + obj.Library[i].Id.ToString();
-                        }
+                        
                     }
                 }
             }

@@ -27,8 +27,8 @@ namespace AP01Project
         }
         public void SearchQuery(string value)
         {          
-            string pathParmis = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\asus\Desktop\ProjectFile\AP01Project\data\BookInfo.mdf;Integrated Security=True;Connect Timeout=30";
-            SqlConnection con = new SqlConnection(pathParmis);
+            string pathzahra = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Lenovo\Desktop\erare\BookshopProject\AP01Project\data\BookInfo.mdf;Integrated Security=True;Connect Timeout=30";
+            SqlConnection con = new SqlConnection(pathzahra);
             con.Open();
             string command;
             command = "select * from TBookInfo Where Title Like '%" + value + "%' or Author Like '%" + value + "%'";
@@ -39,8 +39,8 @@ namespace AP01Project
         }
         public void DeleteQueryShow(int value)
         {
-            string pathParmis = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\asus\Desktop\ProjectFile\AP01Project\data\BookInfo.mdf;Integrated Security=True;Connect Timeout=30";
-            SqlConnection con = new SqlConnection(pathParmis);
+            string pathzahra = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Lenovo\Desktop\erare\BookshopProject\AP01Project\data\BookInfo.mdf;Integrated Security=True;Connect Timeout=30";
+            SqlConnection con = new SqlConnection(pathzahra);
             con.Open();
             string command;
             command = "select * from TBookInfo Where Id = '" + value + "'";
@@ -61,7 +61,8 @@ namespace AP01Project
         {
             DeleteQueryShow(int.Parse(TextBoxEdit.Text));
 
-            string pathParmis = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\asus\Desktop\ProjectFile\AP01Project\data\BookInfo.mdf;Integrated Security=True;Connect Timeout=30";
+            string pathzahra = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Lenovo\Desktop\erare\BookshopProject\AP01Project\data\BookInfo.mdf;Integrated Security=True;Connect Timeout=30";
+            
             //SqlConnection con = new SqlConnection(pathParmis);
             //con.Open();
             //string command;
@@ -72,7 +73,7 @@ namespace AP01Project
 
             //delete 
             int ee = int.Parse(TextBoxEdit.Text);
-            SqlConnection sqlConnection = new SqlConnection(pathParmis);
+            SqlConnection sqlConnection = new SqlConnection(pathzahra);
             SqlCommand a = new SqlCommand();
             a.CommandText = "Delete from TBookInfo Where Id = @ee";
             SqlDataAdapter vv = new SqlDataAdapter();

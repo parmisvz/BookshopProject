@@ -28,9 +28,10 @@
                   VerticalAlignment="Top">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Id" Width="100" Binding="{Binding Id}"/>
-                    <DataGridTextColumn Header="Name" Width="100" Binding="{Binding Name}"/>
+                    <DataGridTextColumn Header="Title" Width="100" Binding="{Binding Title}"/>
                     <DataGridTextColumn Header="Author" Width="100" Binding="{Binding Author}"/>
                     <DataGridTextColumn Header="Price" Width="100" Binding="{Binding Price}"/>
+                    <DataGridTextColumn Header="Year" Width="100" Binding="{Binding PublishedDate}"/>
                 </DataGrid.Columns>
             </DataGrid>
             <Button x:Name="showbooks" Content="Show All Books" Click="show_books"

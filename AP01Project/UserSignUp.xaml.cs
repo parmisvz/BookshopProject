@@ -71,12 +71,12 @@ namespace AP01Project
                     //User.addtousers(cust, username.Text);
                     UserSignIn window1 = new UserSignIn();
 
-                    string pathZahra = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Lenovo\Desktop\AP\BookshopProject\AP01Project\data\BookInfo.mdf;Integrated Security=True;Connect Timeout=30";
+                    string pathZahra = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Lenovo\Desktop\erare\BookshopProject\AP01Project\data\UserInfo.mdf;Integrated Security=True;Connect Timeout=30";
                     //string pathParmis = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\asus\Desktop\ProjectFile\AP01Project\data\UserInfo.mdf;Integrated Security=True;Connect Timeout=30";
                     
                     SqlConnection SConnection = new SqlConnection(pathZahra);
                     SConnection.Open();
-                    string Command = "INSERT INTO TUserInfo(user_name,password,name,phone_number,mojodi) VALUES('" + username.Text.Trim() + "','" + password.Password.Trim() + "','" + name.Text.Trim() + "','" + phone.Text.Trim() + "','" + 0 + "')";
+                    string Command = "INSERT INTO TUserInfo(user_name,password,name,phone_number,mojodi,bought,bookmark) VALUES('" + username.Text.Trim() + "','" + password.Password.Trim() + "','" + name.Text.Trim() + "','" + phone.Text.Trim() + "','" + 0 + "','"+""+"','"+""+"')";
                     //SqlCommand SCommand = new SqlCommand(Command, SConnection);
                     SqlDataAdapter adapter = new SqlDataAdapter();
                     adapter.InsertCommand=new SqlCommand(Command, SConnection);

@@ -34,17 +34,20 @@ namespace AP01Project
 
 
                 int sum = 0;
+                int discount = 0;
                 for (int i = 0; i < obj.Library.Count; i++)
                 {
                     sum += obj.Library[i].Price;
+                    discount+=obj.Library[i].Discount;
                 }
                 if (sum <= obj.mojodi)
                 {
+                    sum = sum - (sum * discount / 100);
                     obj.mojodi -= sum;
                     
                     String ee = obj.user_name;
 
-                    SqlConnection con = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\Lenovo\Desktop\parmisproject\BookshopProject\AP01Project\data\UserInfo.mdf; Integrated Security = True; Connect Timeout = 30");
+                    SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Lenovo\Desktop\erare\BookshopProject\AP01Project\data\UserInfo.mdf;Integrated Security=True;Connect Timeout=30");
                     SqlDataAdapter vv = new SqlDataAdapter();
                     SqlCommand pp = new SqlCommand();
                     pp.CommandText = "DELETE FROM TUserInfo where user_name=@ee";
@@ -56,9 +59,9 @@ namespace AP01Project
                     con.Dispose();
                     con.Close();
 
-                    SqlConnection con2 = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\Lenovo\Desktop\parmisproject\BookshopProject\AP01Project\data\UserInfo.mdf; Integrated Security = True; Connect Timeout = 30");
+                    SqlConnection con2 = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Lenovo\Desktop\erare\BookshopProject\AP01Project\data\UserInfo.mdf;Integrated Security=True;Connect Timeout=30");
                     con2.Open();
-                    string command2 = "INSERT INTO TUserInfo (user_name,password,name,phone_number,mojodi,bought) values('" + obj.user_name + "','" + obj.password + "','" + obj.name + "','" + obj.phone_number + "','" + obj.mojodi + "','" + obj.savedbooks + "')";
+                    string command2 = "INSERT INTO TUserInfo (user_name,password,name,phone_number,mojodi,bought,bookmark) values('" + obj.user_name + "','" + obj.password + "','" + obj.name + "','" + obj.phone_number + "','" + obj.mojodi + "','" + obj.savedbooks + "','"+obj.bookmark+"')";
                     SqlDataAdapter adapter = new SqlDataAdapter();
                     adapter.InsertCommand = new SqlCommand(command2, con2);
 

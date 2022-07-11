@@ -47,7 +47,7 @@ namespace AP01Project
                 obj.phone_number = phone.Text;
 
                 string ee = obj.user_name;
-                SqlConnection con=new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\Lenovo\Desktop\parmisproject\BookshopProject\AP01Project\data\UserInfo.mdf; Integrated Security = True; Connect Timeout = 30");
+                SqlConnection con=new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Lenovo\Desktop\erare\BookshopProject\AP01Project\data\UserInfo.mdf;Integrated Security=True;Connect Timeout=30");
                 SqlDataAdapter vv = new SqlDataAdapter();
                 SqlCommand cmd = new SqlCommand();
                 cmd.CommandText = "DELETE FROM TUserInfo where user_name=@ee";
@@ -58,7 +58,7 @@ namespace AP01Project
                 vv.DeleteCommand.ExecuteNonQuery();
                 con.Dispose();
                 con.Close();
-                string pathZahra = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Lenovo\Desktop\AP\BookshopProject\AP01Project\data\BookInfo.mdf;Integrated Security=True;Connect Timeout=30";
+                string pathZahra = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Lenovo\Desktop\erare\BookshopProject\AP01Project\data\UserInfo.mdf;Integrated Security=True;Connect Timeout=30";
                 //string pathParmis = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\asus\Desktop\ProjectFile\AP01Project\data\UserInfo.mdf;Integrated Security=True;Connect Timeout=30";                
                 SqlConnection con2 = new SqlConnection(pathZahra);
                 con2.Open();

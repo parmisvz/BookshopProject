@@ -26,14 +26,14 @@ namespace AP01Project
         {
             this.obj = obj;
             InitializeComponent();
-            string pathZahra = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Lenovo\Desktop\parmisproject\BookshopProject\AP01Project\data\UserInfo.mdf;Integrated Security=True;Connect Timeout=30";
+            string pathZahra = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Lenovo\Desktop\erare\BookshopProject\AP01Project\data\UserInfo.mdf;Integrated Security=True;Connect Timeout=30";
             // string pathParmis = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\asus\Desktop\ProjectFile\AP01Project\data\UserInfo.mdf;Integrated Security=True;Connect Timeout=30";
             SqlConnection sqlConnection = new SqlConnection(pathZahra);
             string Command = "select * from TUserInfo where user_name='" + obj.user_name + "'";
             SqlDataAdapter adapter = new SqlDataAdapter(Command, sqlConnection);
             DataTable dataT = new DataTable();
             adapter.Fill(dataT);
-            string pathzahra = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Lenovo\Desktop\AP\BookshopProject\AP01Project\data\BookInfo.mdf;Integrated Security=True;Connect Timeout=30";
+            string pathzahra = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Lenovo\Desktop\erare\BookshopProject\AP01Project\data\BookInfo.mdf;Integrated Security=True;Connect Timeout=30";
             //string pathParmis = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\asus\Desktop\ProjectFile\AP01Project\data\UserInfo.mdf;Integrated Security=True;Connect Timeout=30";
             SqlConnection sqlConn = new SqlConnection(pathzahra);
             string Comm = "select * from TBookInfo";
@@ -43,6 +43,27 @@ namespace AP01Project
 
             string[] boughtbooks;
             boughtbooks = dataT.Rows[0][5].ToString().Split(',');
+            string[] bookmark = dataT.Rows[0][6].ToString().Split(',');
+            if (bookmark.Length > 0)
+            {
+                for (int i = 0; i < bookmark.Length; i++)
+                {
+                    for (int j = 0; j < data.Rows.Count; j++)
+                    {
+                        if (data.Rows[j][0].ToString() == (bookmark[i]))
+                        {
+                            int a = int.Parse(data.Rows[j][0].ToString());
+                            string name = data.Rows[j][1].ToString();
+                            string author = data.Rows[j][3].ToString();
+                            int price = int.Parse(data.Rows[j][4].ToString());
+                            Book book = new Book(a, name, author, price, 0);
+                            book.Image = data.Rows[j][5].ToString();
+                            book.Pdf = data.Rows[j][2].ToString();
+                            obj.bookmark.Add(book);
+                        }
+                    }
+                }
+            }
             if (boughtbooks.Length > 0)
             {
 
@@ -54,11 +75,13 @@ namespace AP01Project
                         {
                             int a = int.Parse(data.Rows[j][0].ToString());
                             string name = data.Rows[j][1].ToString();
-                            string author = data.Rows[j][2].ToString();
-                            int price = int.Parse(data.Rows[j][3].ToString());
+                            string author = data.Rows[j][3].ToString();
+                            
+                            int price = int.Parse(data.Rows[j][4].ToString());
                             Book book = new Book(a, name, author, price, 0);
-                            book.Image = data.Rows[j][4].ToString();
-                            book.Pdf = data.Rows[j][5].ToString();
+                            book.Image = data.Rows[j][5].ToString();
+                            book.Pdf = data.Rows[j][2].ToString();
+                            book.Discount=int.Parse(data.Rows[j][8].ToString());
                             //obj.Library.Add(book);
                             obj.bought.Add(book);
                         }
@@ -94,9 +117,33 @@ namespace AP01Project
 
         private void exit_Click(object sender, RoutedEventArgs e)
         {
+            obj.bookmarks = "";
+            for (int i = 0; i < obj.bookmark.Count; i++)
+            {
+                if (obj.bookmarks == "")
+                {
+                    obj.bookmarks += obj.bookmark[i].Id;
+                }
+                else
+                {
+                    obj.bookmarks += "," + obj.bookmark[i].Id;
+                }
+            }
+            obj.savedbooks = "";
+            for (int i = 0; i < obj.bought.Count; i++)
+            {
+                if (obj.savedbooks == "")
+                {
+                    obj.savedbooks += obj.bought[i].Id;
+                }
+                else
+                {
+                    obj.savedbooks += "," + obj.bought[i].Id;
+                }
+            }
             String ee = obj.user_name;
 
-            SqlConnection con = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\Lenovo\Desktop\parmisproject\BookshopProject\AP01Project\data\UserInfo.mdf; Integrated Security = True; Connect Timeout = 30");
+            SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Lenovo\Desktop\erare\BookshopProject\AP01Project\data\UserInfo.mdf;Integrated Security=True;Connect Timeout=30");
             SqlDataAdapter vv = new SqlDataAdapter();
             SqlCommand pp = new SqlCommand();
             pp.CommandText = "DELETE FROM TUserInfo where user_name=@ee";
@@ -108,9 +155,9 @@ namespace AP01Project
             con.Dispose();
             con.Close();
 
-            SqlConnection con2 = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\Lenovo\Desktop\parmisproject\BookshopProject\AP01Project\data\UserInfo.mdf; Integrated Security = True; Connect Timeout = 30");
+            SqlConnection con2 = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Lenovo\Desktop\erare\BookshopProject\AP01Project\data\UserInfo.mdf;Integrated Security=True;Connect Timeout=30");
             con2.Open();
-            string command2 = "INSERT INTO TUserInfo (user_name,password,name,phone_number,mojodi,bought) values('" + obj.user_name + "','" + obj.password + "','" + obj.name + "','" + obj.phone_number + "','" + obj.mojodi + "','" + obj.savedbooks + "')";
+            string command2 = "INSERT INTO TUserInfo (user_name,password,name,phone_number,mojodi,bought,bookmark) values('" + obj.user_name + "','" + obj.password + "','" + obj.name + "','" + obj.phone_number + "','" + obj.mojodi + "','" + obj.savedbooks + "','"+obj.bookmarks+"')";
             SqlDataAdapter adapter = new SqlDataAdapter();
             adapter.InsertCommand = new SqlCommand(command2, con2);
 

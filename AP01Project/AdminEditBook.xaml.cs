@@ -29,8 +29,9 @@ namespace AP01Project
         }
         private void Edit_Click(object sender, RoutedEventArgs e)
         {
-            string pathParmis = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\asus\Desktop\ProjectFile\AP01Project\data\BookInfo.mdf;Integrated Security=True;Connect Timeout=30";
-            SqlConnection con = new SqlConnection(pathParmis);
+            string pathZahra = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Lenovo\Desktop\erare\BookshopProject\AP01Project\data\BookInfo.mdf;Integrated Security=True;Connect Timeout=30";
+            string pathParmis = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Lenovo\Desktop\AP\BookshopProject\AP01Project\data\BookInfo.mdf;Integrated Security=True;Connect Timeout=30";
+            SqlConnection con = new SqlConnection(pathZahra);
             con.Open();
             string command;
             command = "Select * from TBookInfo";
@@ -48,17 +49,7 @@ namespace AP01Project
             }
             string Title, author, address, price, image, description, discount;
             int nSoldItem, rating, DPublished;
-            Title = title.Text;
-            address = Address.Text;
-            author = Author.Text;
-            price = Price.Text;
-            image = Image.Text;
-            DPublished = int.Parse(DatePublished.Text);
-            rating = int.Parse(data.Rows[x][6].ToString());
-            description = Description.Text;
-            discount = Discount.Text;
-            nSoldItem = int.Parse(data.Rows[x][9].ToString()); 
-
+            
             if (title.Text == "")
             {
                 Title = data.Rows[x][1].ToString();
@@ -91,33 +82,46 @@ namespace AP01Project
             {
                 DPublished = int.Parse(data.Rows[0][10].ToString());
             }
+            else
+            {
+                Title = title.Text;
+                address = Address.Text;
+                author = Author.Text;
+                price = Price.Text;
+                image = Image.Text;
+                DPublished = int.Parse(DatePublished.Text);
+                rating = int.Parse(data.Rows[x][6].ToString());
+                description = Description.Text;
+                discount = Discount.Text;
+                nSoldItem = int.Parse(data.Rows[x][9].ToString());
+                //delete 
+                int ee = Id;
+                SqlConnection sqlConnection = new SqlConnection(pathZahra);
+                SqlCommand a = new SqlCommand();
+                a.CommandText = "Delete from TBookInfo Where Id = @ee";
+                SqlDataAdapter vv = new SqlDataAdapter();
+                vv.DeleteCommand = a;
+                vv.DeleteCommand.Parameters.Add("@ee", SqlDbType.Int).Value = Id;
+                vv.DeleteCommand.Connection = sqlConnection;
+                sqlConnection.Open();
+                vv.DeleteCommand.ExecuteNonQuery();
+                sqlConnection.Dispose();
+                sqlConnection.Close();
 
-            //delete 
-            int ee = Id;
-            SqlConnection sqlConnection = new SqlConnection(pathParmis);
-            SqlCommand a = new SqlCommand();
-            a.CommandText = "Delete from TBookInfo Where Id = @ee";
-            SqlDataAdapter vv = new SqlDataAdapter();
-            vv.DeleteCommand = a;
-            vv.DeleteCommand.Parameters.Add("@ee", SqlDbType.Int).Value = Id;
-            vv.DeleteCommand.Connection = sqlConnection;
-            sqlConnection.Open();
-            vv.DeleteCommand.ExecuteNonQuery();
-            sqlConnection.Dispose();
-            sqlConnection.Close();
-
-            //insert 
-            SqlConnection sqlConnectionInsert = new SqlConnection(pathParmis);
-            sqlConnectionInsert.Open();
-            string commandInsert = "INSERT INTO TBookInfo(Title,Address,Author,Price,Image,Rating,Description,Discount,NoSoldItem,PublishedDate) VALUES('" + Title + "','" + address + "','" + author + "','" + int.Parse(price) + "','" + image + "','" + rating + "','" + description + "','" + int.Parse(discount) + "' ,'" + nSoldItem + "', '" + DPublished + "')";
-            SqlDataAdapter adapterInsert = new SqlDataAdapter();
-            adapterInsert.InsertCommand = new SqlCommand(commandInsert, sqlConnectionInsert);
-            adapterInsert.InsertCommand.ExecuteNonQuery();
-            sqlConnectionInsert.Close();
+                //insert 
+                SqlConnection sqlConnectionInsert = new SqlConnection(pathZahra);
+                sqlConnectionInsert.Open();
+                string commandInsert = "INSERT INTO TBookInfo(Title,Address,Author,Price,Image,Rating,Description,Discount,NoSoldItem,PublishedDate) VALUES('" + Title + "','" + address + "','" + author + "','" + int.Parse(price) + "','" + image + "','" + rating + "','" + description + "','" + int.Parse(discount) + "' ,'" + nSoldItem + "', '" + DPublished + "')";
+                SqlDataAdapter adapterInsert = new SqlDataAdapter();
+                adapterInsert.InsertCommand = new SqlCommand(commandInsert, sqlConnectionInsert);
+                adapterInsert.InsertCommand.ExecuteNonQuery();
+                sqlConnectionInsert.Close();
 
 
-            MessageBox.Show("Edited Sucessfuly");
-            this.Close();
+                MessageBox.Show("Edited Sucessfuly");
+                this.Close();
+            }
+            
         }
     }
 }

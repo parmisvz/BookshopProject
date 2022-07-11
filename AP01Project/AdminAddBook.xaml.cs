@@ -48,8 +48,9 @@ namespace AP01Project
                 else
                 {
                     int nSoldItem = 0, rating = 0;
-                    string pathParmis = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\asus\Desktop\ProjectFile\AP01Project\data\BookInfo.mdf;Integrated Security=True;Connect Timeout=30";
-                    SqlConnection con = new SqlConnection(pathParmis);
+                    string pathZahra = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Lenovo\Desktop\erare\BookshopProject\AP01Project\data\BookInfo.mdf;Integrated Security=True;Connect Timeout=30";
+                    string pathParmis = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Lenovo\Desktop\AP\BookshopProject\AP01Project\data\BookInfo.mdf;Integrated Security=True;Connect Timeout=30";
+                    SqlConnection con = new SqlConnection(pathZahra);
                     con.Open();
                     string commandAdd;
                     commandAdd = "INSERT INTO TBookInfo(Title,Address,Author,Price,Image,Rating,Description,Discount,NoSoldItem,PublishedDate) VALUES('" + title.Text + "','" + Address.Text + "','" + Author.Text + "','" + int.Parse(Price.Text) + "','" + Image.Text + "','" + rating + "','" + Description.Text+ "','" + int.Parse(Discount.Text) + "' ,'" + nSoldItem + "', '"+ int.Parse(PublishedDate.Text)+ "')";

@@ -14,6 +14,7 @@ namespace AP01Project
         public string Name { get; set; }
         public string Image{ get; set; }
         public string Pdf { get; set; }
+       
         public string Author { get; set; }
         public int Price { get; set; }
         public bool bookmark { get; set; }

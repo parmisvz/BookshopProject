@@ -33,6 +33,7 @@
                     <DataGridTextColumn Header="Author" Width="100" Binding="{Binding Author}"/>
                     <DataGridTextColumn Header="Price" Width="100" Binding="{Binding Price}"/>
                 </DataGrid.Columns>
+                
             </DataGrid>
 
 

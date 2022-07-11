@@ -71,8 +71,9 @@ namespace AP01Project
                     obj.password = password.Text;
                     //delete 
                     string ee = obj.user_name;
+                    string pathZahra = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Lenovo\Desktop\parmisproject\BookshopProject\AP01Project\AP01Project\data\AdminInfo.mdf;Integrated Security=True;Connect Timeout=30";
                     string pathParmis = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\asus\Desktop\ProjectFile\AP01Project\data\AdminInfo.mdf;Integrated Security=True;Connect Timeout=30";
-                    SqlConnection sqlConnection = new SqlConnection(pathParmis);                   
+                    SqlConnection sqlConnection = new SqlConnection(pathZahra);                   
                     SqlCommand a = new SqlCommand();
                     a.CommandText = "Delete from TAdminInfo Where AdminUserName = @ee";
                     SqlDataAdapter vv =new SqlDataAdapter();
@@ -85,7 +86,7 @@ namespace AP01Project
                     sqlConnection.Close();
 
                     //insert 
-                    SqlConnection sqlConnectionInsert = new SqlConnection(pathParmis);
+                    SqlConnection sqlConnectionInsert = new SqlConnection(pathZahra);
                     sqlConnectionInsert.Open();
                     string commandInsert = "Insert Into TAdminInfo(AdminUserName,AdminName,AdminPassword,AdminPhoneNo) Values('" + obj.user_name + "','" + name.Text + "','" + password.Text + "','" + phone.Text + "')";
                     SqlDataAdapter adapter = new SqlDataAdapter();

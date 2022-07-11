@@ -86,9 +86,9 @@ namespace AP01Project
         }
         public static List<Admin> ReadFromSQLAddToList()
         {
-            string pathZahra = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Lenovo\Desktop\parmisproject\BookshopProject\AP01Project\data\AdminInfo.mdf;Integrated Security=True;Connect Timeout=30";
-            string pathParmis = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\asus\Desktop\ProjectFile\AP01Project\data\AdminInfo.mdf;Integrated Security=True;Connect Timeout=30";
-            SqlConnection sqlConnection = new SqlConnection(pathParmis);
+            string pathZahra = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Lenovo\Desktop\parmisproject\BookshopProject\AP01Project\AP01Project\data\AdminInfo.mdf;Integrated Security=True;Connect Timeout=30";
+            //string pathParmis = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\asus\Desktop\ProjectFile\AP01Project\data\AdminInfo.mdf;Integrated Security=True;Connect Timeout=30";
+            SqlConnection sqlConnection = new SqlConnection(pathZahra);
             string Command = "select * from TAdminInfo";
             SqlDataAdapter adapter = new SqlDataAdapter(Command, sqlConnection);
             DataTable dataT = new DataTable();

@@ -28,7 +28,8 @@ namespace AP01Project
 
         private void show_books(object sender, RoutedEventArgs e)
         {
-            cart2.ItemsSource = obj.Library;
+
+            cart2.ItemsSource = obj.bought;
         }
 
         private void delete(object sender, RoutedEventArgs e)

@@ -22,7 +22,7 @@
                        HorizontalAlignment="Center"
                        VerticalAlignment="Center"/>
             <TextBox 
-                x:Name="search"
+                Name="search"
                 Background="Transparent" 
                 BorderThickness="0"
                 VerticalAlignment="Center"

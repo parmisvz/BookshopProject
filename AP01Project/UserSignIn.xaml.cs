@@ -38,9 +38,9 @@ namespace AP01Project
 
                 if (User.checkuser(user_name.Text, password.Password))
                 {
-                    string name = User.Name(user_name.Text);
-                    string phone = User.Phone_number(user_name.Text);
-                    User person = new User(user_name.Text, password.Password, name, phone);
+                    string name = User.Name(user_name.Text.ToString());
+                    string phone = User.Phone_number(user_name.Text.ToString());
+                    User person = new User(user_name.Text.ToString(), password.Password.ToString(), name, phone);
                     UserDashboard userdashboard = new UserDashboard(person);
                     userdashboard.Show();
                     this.Close();

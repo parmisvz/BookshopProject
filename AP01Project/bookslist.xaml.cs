@@ -30,7 +30,7 @@ namespace AP01Project
 
         private void show_books(object sender, RoutedEventArgs e)
         {
-            SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Lenovo\Desktop\AP\BookshopProject\AP01Project\data\BookInfo.mdf;Integrated Security=True;Connect Timeout=30");
+            SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Lenovo\Desktop\erare\BookshopProject\AP01Project\data\BookInfo.mdf;Integrated Security=True;Connect Timeout=30");
             con.Open();
             string command;
             command = "select * from TBookinfo";
@@ -42,23 +42,29 @@ namespace AP01Project
 
         private void add_tocart(object sender, RoutedEventArgs e)
         {
-            SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Lenovo\Desktop\AP\BookshopProject\AP01Project\data\BookInfo.mdf;Integrated Security=True;Connect Timeout=30");
+            SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Lenovo\Desktop\erare\BookshopProject\AP01Project\data\BookInfo.mdf;Integrated Security=True;Connect Timeout=30");
             con.Open();
             string command;
             command = "select * from TBookinfo";
             SqlDataAdapter adapter = new SqlDataAdapter(command, con);
             DataTable data = new DataTable();
             adapter.Fill(data);
-            int x = int.Parse(shenase.Text.ToString());
-            int index = int.Parse(data.Rows[x - 1][0].ToString());
-            string name = data.Rows[x - 1][1].ToString();
-            string author = data.Rows[x - 1][2].ToString();
-            int price = int.Parse(data.Rows[x - 1][3].ToString());
-            Book book = new Book(index, name, author, price ,0);
-            book.Image=data.Rows[x - 1][4].ToString();
-            book.Pdf=data.Rows[x - 1][5].ToString();
-            obj.Library.Add(book);
-            
+            for (int i = 0; i < data.Rows.Count; i++)
+            {
+                if (data.Rows[i][0].ToString() == shenase.Text.ToString())
+                {
+                    //int x = int.Parse(shenase.Text.ToString());
+                    int index = int.Parse(data.Rows[i][0].ToString());
+                    string name = data.Rows[i][1].ToString();
+                    string author = data.Rows[i][3].ToString();
+                    int price = int.Parse(data.Rows[i][4].ToString());
+                    Book book = new Book(index, name, author, price, 0);
+                    book.Image = data.Rows[i][5].ToString();
+                    book.Pdf = data.Rows[i][2].ToString();
+                    book.Discount = int.Parse(data.Rows[i][8].ToString());
+                    obj.Library.Add(book);
+                }
+            }
             MessageBox.Show("The book added successfully to your cart.");
         }
 
@@ -73,11 +79,11 @@ namespace AP01Project
         private void searchbook(object sender, RoutedEventArgs e)
         {
             string pathParmis = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Lenovo\Desktop\AP\BookshopProject\AP01Project\data\BookInfo.mdf;Integrated Security=True;Connect Timeout=30";
-            string pathZahra = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Lenovo\Desktop\AP\BookshopProject\AP01Project\data\BookInfo.mdf;Integrated Security=True;Connect Timeout=30";
+            string pathZahra = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Lenovo\Desktop\erare\BookshopProject\AP01Project\data\BookInfo.mdf;Integrated Security=True;Connect Timeout=30";
             SqlConnection con = new SqlConnection(pathZahra);
             con.Open();
             string command;
-            command = "select * from TBookInfo Where Name Like '%" + search.Text.Trim() + "%' or Author Like '%" + search.Text.Trim() + "%'";
+            command = "select * from TBookInfo Where Title Like '%" + search.Text.Trim() + "%' or Author Like '%" + search.Text.Trim() + "%'";
             SqlDataAdapter adapter = new SqlDataAdapter(command, con);
             DataTable data = new DataTable();
             adapter.Fill(data);
